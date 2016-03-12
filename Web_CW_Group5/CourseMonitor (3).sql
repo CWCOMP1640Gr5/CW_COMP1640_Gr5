@@ -230,3 +230,9 @@ select * from Course where courseId='A1234'
 select * from CourseWork where courseId='A1234' and yearMaking=2016
 
 select * from CourseWork where courseLeader='Lee'
+
+select CourseWork.courseWorkId,CourseWork.yearMaking,CourseWork.semester,CourseWork.courseId,CourseWork.studentCount, Course.title,
+CourseWork.createDate from CourseWork
+full join Course
+ON Course.courseId = CourseWork.courseId
+ where CourseWork.courseWorkId = 1

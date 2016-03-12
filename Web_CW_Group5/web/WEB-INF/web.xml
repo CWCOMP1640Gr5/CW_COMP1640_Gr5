@@ -68,6 +68,10 @@
         <servlet-name>UpdateCourse</servlet-name>
         <servlet-class>servlet.UpdateCourse</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PreCreateCMR</servlet-name>
+        <servlet-class>servlet.PreCreateCMR</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListCourse</servlet-name>
         <url-pattern>/ListCourse</url-pattern>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>UpdateCourse</servlet-name>
         <url-pattern>/UpdateCourse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PreCreateCMR</servlet-name>
+        <url-pattern>/PreCreateCMR</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

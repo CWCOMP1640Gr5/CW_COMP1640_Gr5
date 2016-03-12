@@ -64,18 +64,18 @@ public class LoginProcess extends HttpServlet {
         Connection con;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String cl= new String("CL");
-        String cm=new String("CM");
-        String adm=new String("ADM");
-        String pvc=new String("PVC");
-        String dtl=new String("DTL");
-        String gu=new String("GU");
+        String cl = new String("CL");
+        String cm = new String("CM");
+        String adm = new String("ADM");
+        String pvc = new String("PVC");
+        String dtl = new String("DTL");
+        String gu = new String("GU");
 
         List<AccountDAO> list = new ArrayList<>();
 
         con = dbconnect.DBConnect.getConnection();
         try {
-            pstmt = con.prepareStatement("select permission from Account where userName=? and password=?");
+            pstmt = con.prepareStatement("select permission,lastname from Account where userName=? and password=?");
             pstmt.setString(1, userName);
             pstmt.setString(2, encryptPass);
             rs = pstmt.executeQuery();
@@ -84,40 +84,56 @@ public class LoginProcess extends HttpServlet {
                 //login successful
                 HttpSession session = request.getSession();
                 session.setAttribute("user", userName);
-
+                session.setAttribute("lastname", rs.getString("lastname"));
                 //use cookie to save user and password:
                 Cookie cUser = new Cookie("user", userName);
                 Cookie cPass = new Cookie("pass", passWord);
+                Cookie cLName = new Cookie("lastname", rs.getString("lastname"));
 
                 cUser.setMaxAge(60 * 60 * 24 * 30); // 1 month
                 cPass.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                cLName.setMaxAge(60 * 60 * 24 * 30); // 1 month
 
                 response.addCookie(cUser);
                 response.addCookie(cPass);
-                String kq =rs.getString("permission");
-                
-                if(rs.getString("permission").equals(gu))
-                {
-                     request.getRequestDispatcher("index.jsp").forward(request, response);
+                response.addCookie(cLName);
+                String kq = rs.getString("permission");
+
+                if (rs.getString("permission").equals(gu)) {
+                    Cookie linkpages = new Cookie("linkpages", "index.jsp");
+                    linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                    response.addCookie(linkpages);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+
                 }
-                if(rs.getString("permission").equals(adm))
-                {
-                     request.getRequestDispatcher("LoadHomeAdmin").forward(request, response);
+                if (rs.getString("permission").equals(adm)) {
+                    Cookie linkpages = new Cookie("linkpages", "LoadHomeAdmin");
+                    linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                    response.addCookie(linkpages);
+                    request.getRequestDispatcher("LoadHomeAdmin").forward(request, response);
+
                 }
-                if(rs.getString("permission").equals(cl))
-                {
-                     request.getRequestDispatcher("homePageForCL.jsp").forward(request, response);
+                if (rs.getString("permission").equals(cl)) {
+                    Cookie linkpages = new Cookie("linkpages", "homePageForCL.jsp");
+                    linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                    response.addCookie(linkpages);
+                    request.getRequestDispatcher("homePageForCL.jsp").forward(request, response);
+
                 }
-                if(rs.getString("permission").equals(cm))
-                {
-                     request.getRequestDispatcher("homePageForCM.jsp").forward(request, response);
+                if (rs.getString("permission").equals(cm)) {
+                    Cookie linkpages = new Cookie("linkpages", "homePageForCM.jsp");
+                    linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                    response.addCookie(linkpages);
+                    request.getRequestDispatcher("homePageForCM.jsp").forward(request, response);
+
                 }
-                if(rs.getString("permission").equals(pvc) || rs.getString("permission").equals(dtl))
-                {
-                     request.getRequestDispatcher("homePageForDirection.jsp").forward(request, response);
+                if (rs.getString("permission").equals(pvc) || rs.getString("permission").equals(dtl)) {
+                    Cookie linkpages = new Cookie("linkpages", "homePageForDirection.jsp");
+                    linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
+                    response.addCookie(linkpages);
+                    request.getRequestDispatcher("homePageForDirection.jsp").forward(request, response);
+
                 }
-                
-                   
 
             } else {
                 request.setAttribute("loginErr", "Login fail!");

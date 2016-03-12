@@ -39,11 +39,12 @@ public class CourseWorkDAO implements Serializable {
     private int courserUnits;
     private String costUnit;
     private boolean ishadCMR;
+    private String title;
 
     public CourseWorkDAO() {
     }
 
-    public CourseWorkDAO(int courseWorkId, String courseId, int departmentId, String courseLeader, String courserModerator, Date createDate, int yearMaking, int semester, int studentCount, int courserUnits, String costUnit, boolean ishadCMR) {
+    public CourseWorkDAO(int courseWorkId, String courseId, int departmentId, String courseLeader, String courserModerator, Date createDate, int yearMaking, int semester, int studentCount, int courserUnits, String costUnit, boolean ishadCMR, String title) {
         this.courseWorkId = courseWorkId;
         this.courseId = courseId;
         this.departmentId = departmentId;
@@ -56,6 +57,7 @@ public class CourseWorkDAO implements Serializable {
         this.courserUnits = courserUnits;
         this.costUnit = costUnit;
         this.ishadCMR = ishadCMR;
+        this.title = title;
     }
 
     public int getCourseWorkId() {
@@ -154,7 +156,13 @@ public class CourseWorkDAO implements Serializable {
         this.ishadCMR = ishadCMR;
     }
 
-   
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public List<CourseWorkDAO> getAllCoursesWork() {
         List<CourseWorkDAO> list = new ArrayList<>();
@@ -292,7 +300,6 @@ public class CourseWorkDAO implements Serializable {
     }
 
     ///
-
     public CourseDAO getCourseByCourseWorkId(int courseWorkId) {
         CourseDAO co = null;
         Connection con;
@@ -362,13 +369,13 @@ public class CourseWorkDAO implements Serializable {
         return false;
 
     }
-    
-    public boolean checkCourseWork(String courseId,int year) {
+
+    public boolean checkCourseWork(String courseId, int year) {
         Connection con;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        boolean kq= false;
-        
+        boolean kq = false;
+
         con = dbconnect.DBConnect.getConnection();
         try {
             pstm = con.prepareStatement("select * from CourseWork where courseId=? and yearMaking=?");
@@ -377,8 +384,8 @@ public class CourseWorkDAO implements Serializable {
             rs = pstm.executeQuery();
 
             if (rs.next()) {
-                
-               return kq = true;
+
+                return kq = true;
             }
 
         } catch (SQLException ex) {
@@ -394,7 +401,7 @@ public class CourseWorkDAO implements Serializable {
         PreparedStatement pstm = null;
         ResultSet rs = null;
         con = dbconnect.DBConnect.getConnection();
-        boolean ishadCMR= false;
+        boolean ishadCMR = false;
 
         try {
             pstm = con.prepareStatement("select * from CourseWork where courseLeader=? and ishadCMR=?");
@@ -427,5 +434,76 @@ public class CourseWorkDAO implements Serializable {
         }
 
         return list;
+    }
+
+    public List<CourseWorkDAO> getCourseWorkByLastName(String lastName) {
+        List<CourseWorkDAO> list = new ArrayList<>();
+        Connection con;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        con = dbconnect.DBConnect.getConnection();
+        boolean ishadCMR = false;
+
+        try {
+            pstm = con.prepareStatement("select CourseWork.courseWorkId,CourseWork.yearMaking,CourseWork.semester,CourseWork.courseId,CourseWork.studentCount, Course.title from CourseWork\n"
+                    + "full join Course\n"
+                    + "ON Course.courseId = CourseWork.courseId\n"
+                    + " where courseLeader=? and ishadCMR=?");
+            pstm.setString(1, lastName);
+            pstm.setBoolean(2, ishadCMR);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                CourseWorkDAO cou = new CourseWorkDAO();
+                cou.setCourseWorkId(rs.getInt("courseWorkId"));
+                cou.setCourseId(rs.getString("courseId"));
+                cou.setYearMaking(rs.getInt("yearMaking"));
+                cou.setSemester(rs.getInt("semester"));
+                cou.setStudentCount(rs.getInt("studentCount"));
+                cou.setTitle(rs.getString("title"));
+                list.add(cou);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CourseWorkDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            dbconnect.DBConnect.closeAll(con, pstm, rs);
+        }
+
+        return list;
+    }
+
+    public CourseWorkDAO getCourseWorkByID(int id) {
+        CourseWorkDAO cwd = new CourseWorkDAO();
+        Connection con;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        con = dbconnect.DBConnect.getConnection();
+        boolean ishadCMR = false;
+
+        try {
+            pstm = con.prepareStatement("select CourseWork.courseWorkId,CourseWork.yearMaking,CourseWork.semester,CourseWork.courseId,CourseWork.studentCount, Course.title,\n"
+                    + "CourseWork.createDate from CourseWork\n"
+                    + "full join Course\n"
+                    + "ON Course.courseId = CourseWork.courseId\n"
+                    + " where courseWorkId=?");
+            pstm.setInt(1, id);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                cwd.setCourseWorkId(rs.getInt("courseWorkId"));
+                cwd.setCourseId(rs.getString("courseId"));
+                cwd.setYearMaking(rs.getInt("yearMaking"));
+                cwd.setSemester(rs.getInt("semester"));
+                cwd.setStudentCount(rs.getInt("studentCount"));
+                cwd.setTitle(rs.getString("title"));
+                cwd.setCreateDate(rs.getDate("createDate"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CourseWorkDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            dbconnect.DBConnect.closeAll(con, pstm, rs);
+        }
+
+        return cwd;
     }
 }

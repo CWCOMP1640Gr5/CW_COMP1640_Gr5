@@ -5,25 +5,21 @@
  */
 package servlet;
 
-import bean.AccountDAO;
 import bean.CourseWorkDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Fpt
+ * @author TIEN DAT
  */
-@WebServlet(name = "ListCourseWorkForCL", urlPatterns = {"/ListCourseWorkForCL"})
-public class ListCourseWorkForCL extends HttpServlet {
+@WebServlet(name = "PreCreateCMR", urlPatterns = {"/PreCreateCMR"})
+public class PreCreateCMR extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,33 +33,12 @@ public class ListCourseWorkForCL extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        int courseWorkID = Integer.parseInt(request.getParameter("courseWorkId"));
+        CourseWorkDAO cwd = new CourseWorkDAO();
+        cwd = new CourseWorkDAO().getCourseWorkByID(courseWorkID);
+        request.setAttribute("createCMR", cwd);
+        request.getRequestDispatcher("createCMR.jsp").forward(request, response);
 
-        HttpSession session = request.getSession();
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (int i = 0; i < cookies.length; i++) {
-                if (cookies[i].getName().equals("lastname")) {
-                    session.setAttribute("lastname", cookies[i].getValue());
-                }
-            }
-        }
-        String clName = (String) session.getAttribute("lastname");
-        List<CourseWorkDAO> listCou = new CourseWorkDAO().getCourseWorkByLastName(clName);
-
-//         try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet NewServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet NewServlet at " + listCou + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-        request.setAttribute("listCou", listCou);
-        request.getRequestDispatcher("listCourserWorkCL.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

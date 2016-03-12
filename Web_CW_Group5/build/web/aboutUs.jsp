@@ -38,42 +38,42 @@
                             <div class="pull-left">
                                 <div class="input-group pull-right">              
                                     <input type="text" class="form-control" placeholder="Search course here">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                                </span>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                    </span>
                                 </div>
-                               
+
                             </div>
                             <div class="input-group pull-left">                                    
-                                    <img style="height:38%;width: 38% " src="templates/img/logo.jpg" alt=""/>
-                                </div>
+                                <img style="height:38%;width: 38% " src="templates/img/logo.jpg" alt=""/>
+                            </div>
                             <div class="pull-right">
-                                
+
                                 <ul class="list-unstyled top-links">
-                                    
+
                                     <c:if test="${not empty sessionScope.user}">
                                         <li><h4 style="color: red"> Hello, ${sessionScope.user}</h4></li>
-                                        <li><h4><a href="ListCourse">List Course</a></h4></li>
+                                        <li><h4><a href="${sessionScope.linkpages}">Control Pages</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
-                                    </c:if>
-                                    <c:if test="${empty sessionScope.user}">
+                                                </c:if>
+                                                <c:if test="${empty sessionScope.user}">
                                         <li><h4><a href="ListCourse">List Course</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="login.jsp">Sign in</a></h4></li>
-                                    </c:if>
-                                </ul>	
+                                                </c:if>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--end .top-bar-->
 
-                                                            		
 
 
 
-                
+
+
             <!--end .header-header-->
 
             <div class="main-nav">
@@ -104,11 +104,11 @@
 
                 <div class="page-header">
                     <h1>Contact Us header <small>About Thomson Reuters
-Thomson Reuters provides professionals with the intelligence, technology and human expertise they need to find trusted answers.
+                            Thomson Reuters provides professionals with the intelligence, technology and human expertise they need to find trusted answers.
 
-We enable professionals in the financial and risk, legal, tax and accounting, intellectual property and science and media markets to make the decisions that matter most, all powered by the world's most trusted news organization.
+                            We enable professionals in the financial and risk, legal, tax and accounting, intellectual property and science and media markets to make the decisions that matter most, all powered by the world's most trusted news organization.
 
-Thomson Reuters shares are listed on the Toronto and New York Stock Exchanges (symbol: TRI).</small></h1>
+                            Thomson Reuters shares are listed on the Toronto and New York Stock Exchanges (symbol: TRI).</small></h1>
                 </div>
             </div>
             <div class="about">

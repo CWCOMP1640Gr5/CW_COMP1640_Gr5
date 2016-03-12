@@ -40,18 +40,19 @@
                             </div>
                             <div class="pull-right">
                                 <ul class="list-unstyled top-links">
+                                    
                                     <c:if test="${not empty sessionScope.user}">
                                         <li><h4 style="color: red"> Hello, ${sessionScope.user}</h4></li>
-                                        <li><h4><a href="ListCourse">List Course</a></h4></li>
+                                        <li><h4><a href="${sessionScope.linkpages}">Control Pages</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
-                                                </c:if>
-                                                <c:if test="${empty sessionScope.user}">
+                                    </c:if>
+                                    <c:if test="${empty sessionScope.user}">
                                         <li><h4><a href="ListCourse">List Course</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="login.jsp">Sign in</a></h4></li>
-                                                </c:if>
-                                </ul>	
+                                    </c:if>
+                                </ul>
                             </div>
                         </div>
                     </div>
