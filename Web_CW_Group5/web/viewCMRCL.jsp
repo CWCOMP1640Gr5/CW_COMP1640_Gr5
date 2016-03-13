@@ -34,7 +34,6 @@
         <![endif]-->
     </head>
     <body>
-        <c:import url="/CMRGet" />
         <header>
             <div class="top-bar" style="background-color: #5bc0de   ">
                 <div class="container">
@@ -43,30 +42,30 @@
                             <div class="pull-left">
                                 <div class="input-group pull-right">              
                                     <input type="text" class="form-control" placeholder="Search course here">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                                </span>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                    </span>
                                 </div>
-                               
+
                             </div>
                             <div class="input-group pull-left">                                    
-                                    <img style="height:38%;width: 38% " src="templates/img/logo.jpg" alt=""/>
-                                </div>
+                                <img style="height:38%;width: 38% " src="templates/img/logo.jpg" alt=""/>
+                            </div>
                             <div class="pull-right">
-                                
+
                                 <ul class="list-unstyled top-links">
-                                    
+
                                     <c:if test="${not empty sessionScope.user}">
                                         <li><h4 style="color: red"> Hello, ${sessionScope.user}</h4></li>
                                         <li><h4><a href="${sessionScope.linkpages}">Control Pages</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
-                                    </c:if>
-                                    <c:if test="${empty sessionScope.user}">
+                                                </c:if>
+                                                <c:if test="${empty sessionScope.user}">
                                         <li><h4><a href="ListCourse">List Course</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="login.jsp">Sign in</a></h4></li>
-                                    </c:if>
+                                                </c:if>
                                 </ul>
                             </div>
                         </div>
@@ -79,21 +78,18 @@
                     <div class="row" style="text-align:center">
                         <ul class="nav nav-pills">
                             <li class="active">
-                                <a href=index.html"><i class="glyphicon glyphicon-home"></i> Home</a>
+                                <a href="homePageForCL.html"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
-                           <li><a href="createCMR.jsp">Create Course Monitoring Reports</a></li>
-                            <li><a href="viewCMR.jsp">View Course Monitoring Reports</a></li>
+                            <li><a href="ListCourseWorkForCL">List CourseWork</a></li>
+                            <li><a href="getCMRCLServlet">View Course Monitoring Reports</a></li>
                             <li><a href="profileCL.html">Profile</a></li>
                             <li><a href="sentCMR.html">Sent Course Monitoring Reports</a></li>
-                            <li><a href="logOut.html">Log out</a></li>
                         </ul>
                     </div>
                 </div>
             </div><!--end .main-nav-->
         </header>
-        <%
-            List<CourseMonitorReport> list = (List) request.getAttribute("crmlist");
-        %>
+
 
 
         <section class="content">
@@ -101,12 +97,13 @@
                 <div class="col-sm-12">
                     <h3 style="background-color:red; text-align:center">List Course Monitor Report</h3>
                 </div>
-                <c:forEach var="cmr" items="${requestScope.crmlist}">
+                <c:forEach var="cmr" items="${requestScope.cmrListForCL}">
                     <div class="list-group">
                         <a href="DetailCmr?CMRId=${cmr.CMRId}" class="list-group-item active">
-                           Tile: ${cmr.title} <br/>
-                           Course Leader: ${cmr.courseLeader}<br/>
-                           Student Count: ${cmr.studentCount}
+                            Tile: ${cmr.title} <br/>
+                            Courser Moderator: ${cmr.courserModerator}<br/>
+                            Student Count: ${cmr.studentCount}<br/>
+                            Action: ${cmr.action}
                         </a>
 
                     </div>

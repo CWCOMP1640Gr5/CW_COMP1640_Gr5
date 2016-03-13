@@ -22,7 +22,7 @@ import model.CourseReportModel;
  * @author Fpt
  */
 @WebServlet(name = "InsertCMR", urlPatterns = {"/InsertCMR"})
-public class InsertCMR extends HttpServlet {
+public class InsertCMRCL extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,7 +41,7 @@ public class InsertCMR extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet InsertCMR</title>");            
+            out.println("<title>Servlet InsertCMR</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet InsertCMR at " + request.getContextPath() + "</h1>");
@@ -62,14 +62,8 @@ public class InsertCMR extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        String courseID = request.getParameter("coursecode");
-        CourseMonitorReport cmr = new CourseMonitorReport();
-        cmr.setAcademicSession(Integer.parseInt(request.getParameter("academicsession")));
-        cmr.setCourseId(request.getParameter("coursecode"));
-        cmr.setCourseLeader(request.getParameter("courseleader"));
-        cmr.setTitle(request.getParameter("title"));
-        cmr.setStudentCount(Integer.parseInt(request.getParameter("studentcounnt")));
+
+        String academicsession = request.getParameter("academicsession");
 
         StatisticalData sd = new StatisticalData();
         sd.setCw1r1(Integer.parseInt(request.getParameter("cw1r1")));
@@ -159,16 +153,17 @@ public class InsertCMR extends HttpServlet {
         gdd.setR6c10(Integer.parseInt(request.getParameter("r6c10")));
 
         CourseReportModel crm = new CourseReportModel();
-        int addCoursesReport = crm.addCoursesReport(cmr);
+        int addCoursesReport = crm.addCoursesReport(Integer.parseInt(academicsession));
         if (addCoursesReport > 0) {
+            int setTrueisHadCMR = crm.setTrueisHadCMR(Integer.parseInt(academicsession));
             sd.setCMRId(addCoursesReport);
             boolean addSD = crm.addSD(addCoursesReport, sd);
             gdd.setCMRId(addCoursesReport);
             boolean addGDD = crm.addGDD(addCoursesReport, gdd);
             System.out.println(addCoursesReport + ":" + addSD + ":" + addGDD);
-             request.getRequestDispatcher("viewCMR.jsp").forward(request, response);
-        }else{
-             request.getRequestDispatcher("createCMR.jsp").forward(request, response);
+            request.getRequestDispatcher("getCMRCLServlet").forward(request, response);
+        } else {
+            request.getRequestDispatcher("createCMR.jsp").forward(request, response);
         }
 
     }

@@ -72,6 +72,10 @@
         <servlet-name>PreCreateCMR</servlet-name>
         <servlet-class>servlet.PreCreateCMR</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getCMRCLServlet</servlet-name>
+        <servlet-class>servlet.getCMRCLServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListCourse</servlet-name>
         <url-pattern>/ListCourse</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>PreCreateCMR</servlet-name>
         <url-pattern>/PreCreateCMR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getCMRCLServlet</servlet-name>
+        <url-pattern>/getCMRCLServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -80,16 +80,10 @@ GO
 CREATE TABLE CourseMonitorReport
 (
 	CMRId int identity primary key,
-	academicSession int NOT NULL,
-	courseWorkId int references CourseWork(courseWorkId) NOT NULL,
-	title varchar(100) NOT NULL,
-	courseLeader varchar(50) NOT NULL,
-	studentCount int NOT NULL,
+	courseWorkId int FOREIGN KEY REFERENCES CourseWork(courseWorkId) NOT NULL,
 	commentContent varchar(200) NULL,
 	action varchar(20)  NULL,
 	startDate date NOT NULL,
-	isStatus bit
-	
 )
 GO
 
@@ -214,7 +208,6 @@ INSERT INTO CourseWork VALUES('C12395',1,'Lee','Wilson',GETDATE(),2015,1,41,14,'
 --INSERT INTO CourseWork VALUES('X4546',1,'Marissa','Green',GETDATE(),2015,1,19,17,'months')
 --INSERT INTO CourseWork VALUES('CA3445',1,'Lee','Wilson',GETDATE(),2015,1,41,12,'hours')
 
-
 INSERT INTO FeedBack VALUES('johnsmith','john@gmail.com','content 1','feedback 1',GETDATE(),0)
 INSERT INTO FeedBack VALUES('john','john2@gmail.com','content 2','feedback 2',GETDATE(),0)
 
@@ -224,6 +217,8 @@ select * from Account where userName='ADMmayer' and password='1’ OR ‘1’ = ‘1'
 
 select * from News
 select * from CourseMonitorReport
+select * from StatisticalData
+select * from GradeDistributionData
 select * from Course where courseId='A1234'
 
 
@@ -236,3 +231,10 @@ CourseWork.createDate from CourseWork
 full join Course
 ON Course.courseId = CourseWork.courseId
  where CourseWork.courseWorkId = 1
+
+ select CourseMonitorReport.CMRId,CourseMonitorReport.action,CourseMonitorReport.startDate, Course.title, CourseWork.courserModerator from [CourseMonitorReport]
+ INNER join CourseWork
+ ON CourseMonitorReport.courseWorkId = CourseWork.courseWorkId
+ INNER JOIN Course
+ ON CourseWork.courseId = Course.courseId
+ Where CourseWork.courseLeader = 'Lee'

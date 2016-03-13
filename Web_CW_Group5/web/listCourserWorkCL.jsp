@@ -77,7 +77,7 @@
                                 <a href="homePageForCL.html"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
                             <li><a href="ListCourseWorkForCL">List CourseWork</a></li>
-                            <li><a href="viewCMP.html">View Course Monitoring Reports</a></li>
+                            <li><a href="getCMRCLServlet">View Course Monitoring Reports</a></li>
                             <li><a href="profileCL.html">Profile</a></li>
                             <li><a href="sentCMR.html">Sent Course Monitoring Reports</a></li>
                         </ul>
