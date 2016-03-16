@@ -126,7 +126,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 class="centerBox" style="background-color:#2aabd2; text-align:center">CREATE NEW CMR</h3>
-                        </div>
+                       
                         <center>
 
                             <form action="InsertCMR" method="GET">
@@ -201,7 +201,7 @@
                                     </tr>                                   
                                 </table>
                                 <br/>
-                                <table class="gddtable" style="width: 100%">
+                                <table class="table">
                                     <tr>
                                         <td colspan="7" style="text-align: center"><h1>Statistical Data</h1></td>
                                     </tr>
@@ -244,7 +244,7 @@
                                 </table>
                                 <br/>
 
-                                <table class="gddtable" style="width: 100%">
+                                <table class="table" style="width: 50%">
                                     <tr>
                                         <td colspan="11" style="text-align: center"><h1>Grade Distribution Data</h1></td>
                                     </tr>
@@ -359,7 +359,7 @@
 
                             </form>
                         </center>
-
+                        </div>
                     </div><!--end .container-->
                     </section><!--end .content-->
 

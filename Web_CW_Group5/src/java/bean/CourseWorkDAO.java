@@ -506,4 +506,78 @@ public class CourseWorkDAO implements Serializable {
 
         return cwd;
     }
+    
+    
+   public List<CourseMonitorReportDAO> getCMRByCMName(String cmName) {
+        List<CourseMonitorReportDAO> list = new ArrayList<>();
+        Connection con;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        con = dbconnect.DBConnect.getConnection();
+        String act="CreateNew";
+
+        try {
+            pstm = con.prepareStatement("select * from CourseMonitorReport s inner join CourseWork e on e.courseWorkId = s.courseWorkId and courserModerator= ? and action =?");
+            pstm.setString(1, cmName);
+            pstm.setString(2, act);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+
+                CourseMonitorReportDAO cou = new CourseMonitorReportDAO();
+
+                cou.setCMRId(rs.getInt(1));
+                cou.setCourseWorkId(rs.getInt(2));
+                cou.setCommentContent(rs.getString(3));
+                cou.setAction(rs.getString(4));
+                cou.setStartDate(rs.getDate(5));
+
+                list.add(cou);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CourseMonitorReportDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            dbconnect.DBConnect.closeAll(con, pstm, rs);
+        }
+
+        return list;
+    }
+   
+   public CourseWorkDAO getCourseWorkByCMRId(int cmrId) {
+        CourseWorkDAO cou = null;
+        Connection con;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        con = dbconnect.DBConnect.getConnection();
+
+        try {
+            pstm = con.prepareStatement("select s.* from CourseWork s inner join CourseMonitorReport e on e.courseWorkId = s.courseWorkId and CMRId=?");
+            pstm.setInt(1, cmrId);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                cou = new CourseWorkDAO();
+
+                cou.setCourseWorkId(rs.getInt(1));
+                cou.setCourseId(rs.getString(2));
+                cou.setDepartmentId(rs.getInt(3));
+                cou.setCourseLeader(rs.getString(4));
+                cou.setCourserModerator(rs.getString(5));
+                cou.setCreateDate(rs.getDate(6));
+                cou.setYearMaking(rs.getInt(7));
+                cou.setSemester(rs.getInt(8));
+                cou.setStudentCount(rs.getInt(9));
+                cou.setCourserUnits(rs.getInt(10));
+                cou.setCostUnit(rs.getString(11));
+                cou.setIshadCMR(rs.getBoolean(12));
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CourseWorkDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            dbconnect.DBConnect.closeAll(con, pstm, rs);
+        }
+
+        return cou;
+    }
 }

@@ -78,12 +78,12 @@
                         <li><a href="ListFeedBack">List Account</a></li>
 
                     </ul>
-                    <ul class="nav nav-sidebar">
+                   <ul class="nav nav-sidebar">
 
                         <li class="active"><a href="#">News <span class="sr-only">(current)</span></a></li>
                         <li><a href="addNews.jsp">Add News</a></li>
                         <li><a href="ListNews">List News</a></li>
-
+                        <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
                     </ul>
 
                 </div>

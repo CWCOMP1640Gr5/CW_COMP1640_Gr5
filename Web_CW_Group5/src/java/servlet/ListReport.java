@@ -35,9 +35,9 @@ public class ListReport extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        
-        List<CourseMonitorReportDAO> listCmr = new CourseMonitorReportDAO().getAllCmrApproved();
+       // List<CourseMonitorReportDAO> listCmr = new CourseMonitorReportDAO().getAllCmrApproved();
         
-        request.setAttribute("ListCMR", listCmr);
+       // request.setAttribute("ListCMR", listCmr);
         request.getRequestDispatcher("listReport.jsp").forward(request, response);
     }
 

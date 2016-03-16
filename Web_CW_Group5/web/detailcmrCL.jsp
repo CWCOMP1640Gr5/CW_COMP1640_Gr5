@@ -71,32 +71,7 @@
                 </div>
             </div><!--end .top-bar-->
 
-            <div class="main-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"> <a href="index.html"><img src="./templates/img/logo.jpg" /></a>  
-
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="banner text-center">
-                                <a href="index.html"><img src="./templates/img/PRADOTEC_LOGO-Copy-185x45.jpg" alt="Banner" /></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4  search-w">
-                            <div class="input-group pull-right">
-                                <input type="text" class="form-control" placeholder="Search course here">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>                                                              		
-
-
-
-                </div>
-            </div><!--end .header-header-->
+           
 
             <div class="main-nav">
                 <div class="container">

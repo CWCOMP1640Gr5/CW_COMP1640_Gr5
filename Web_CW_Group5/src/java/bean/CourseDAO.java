@@ -140,4 +140,25 @@ public class CourseDAO {
         return false;
         
     }
+    
+     public String getCourseIdByCourseWorkId(int courseWorkId) {
+        String courseId = null;
+        Connection con;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        con = dbconnect.DBConnect.getConnection();
+
+        try {
+            pstm = con.prepareStatement("select courseId from CourseWork where courseWorkId=?");
+            pstm.setInt(1, courseWorkId);
+            rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                courseId = rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return courseId;
+    }
 }

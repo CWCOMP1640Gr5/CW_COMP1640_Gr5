@@ -3,15 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/servlet/AddNewCourse.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/servlet/ListCourseWorkForCL.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/bean/AccountDAO.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/bean/CourseWorkDAO.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/web/detailCourseWorkAdmin.jsp</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/web/homePageForCL.jsp</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/servlet/AddCourseWork.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/src/java/servlet/LoginProcess.java</file>
-            <file>file:/C:/Users/Fpt/Desktop/SEM%206/Enterprise%20Website/CourseWork/Web_CW_Group5.rar/Web_CW_Group5/web/listCourserWorkCL.jsp</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/DetailCRMForCM.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/PreCreateCMR.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/CourseMonitorReportDAO.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/FeedBackDAO.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/CourseWorkDAO.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/detailCMRForCM.jsp</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/ListFeedBack.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/viewCMRCL.jsp</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/ApprovedCMR.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/CourseDAO.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/GradeDistributionDataDAO.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/getCMRCLServlet.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/createCMR.jsp</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/ListCourseWorkForCL.java</file>
+            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/home.jsp</file>
         </group>
     </open-files>
 </project-private>
