@@ -82,7 +82,7 @@
                             <li><a href="LoadHome">News</a></li>
                             <li><a href="aboutUs.jsp">About Us</a></li>
                             <li><a href="ListReport">Report</a></li>
-                            <li><a href="feedBack.jsp">Feed Back</a></li>
+                            <li><a href="TestGra">Feed Back</a></li>
                         </ul>
                     </div>
                 </div>

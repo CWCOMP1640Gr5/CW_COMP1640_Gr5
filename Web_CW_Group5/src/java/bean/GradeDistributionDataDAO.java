@@ -24,13 +24,14 @@ public class GradeDistributionDataDAO {
             r2c1 , r2c2 , r2c3 , r2c4 , r2c5 , r2c6 , r2c7 , r2c8 , r2c9 , r2c10 ,
             r3c1 , r3c2 , r3c3 , r3c4 , r3c5 , r3c6 , r3c7 , r3c8 , r3c9 , r3c10 ,
             r4c1 , r4c2 , r4c3 , r4c4 , r4c5 , r4c6 , r4c7 , r4c8 , r4c9 , r4c10 ,
-            r5c1 , r5c2 , r5c3 , r5c4 , r5c5 , r5c6 , r5c7 , r5c8 , r5c9 , r5c10 ,
+            r5c1 , r5c2 , r5c3 , r5c4 , r5c5 , r5c6 , r5c7 , r5c8 , r5c9 , r5c10 ;
+     private float
             r6c1 , r6c2 , r6c3 , r6c4 , r6c5 , r6c6 , r6c7 , r6c8 , r6c9 , r6c10;
 
     public GradeDistributionDataDAO() {
     }
 
-    public GradeDistributionDataDAO(int gradeId, int CMRId, int r1c1, int r1c2, int r1c3, int r1c4, int r1c5, int r1c6, int r1c7, int r1c8, int r1c9, int r1c10, int r2c1, int r2c2, int r2c3, int r2c4, int r2c5, int r2c6, int r2c7, int r2c8, int r2c9, int r2c10, int r3c1, int r3c2, int r3c3, int r3c4, int r3c5, int r3c6, int r3c7, int r3c8, int r3c9, int r3c10, int r4c1, int r4c2, int r4c3, int r4c4, int r4c5, int r4c6, int r4c7, int r4c8, int r4c9, int r4c10, int r5c1, int r5c2, int r5c3, int r5c4, int r5c5, int r5c6, int r5c7, int r5c8, int r5c9, int r5c10, int r6c1, int r6c2, int r6c3, int r6c4, int r6c5, int r6c6, int r6c7, int r6c8, int r6c9, int r6c10) {
+    public GradeDistributionDataDAO(int gradeId, int CMRId, int r1c1, int r1c2, int r1c3, int r1c4, int r1c5, int r1c6, int r1c7, int r1c8, int r1c9, int r1c10, int r2c1, int r2c2, int r2c3, int r2c4, int r2c5, int r2c6, int r2c7, int r2c8, int r2c9, int r2c10, int r3c1, int r3c2, int r3c3, int r3c4, int r3c5, int r3c6, int r3c7, int r3c8, int r3c9, int r3c10, int r4c1, int r4c2, int r4c3, int r4c4, int r4c5, int r4c6, int r4c7, int r4c8, int r4c9, int r4c10, int r5c1, int r5c2, int r5c3, int r5c4, int r5c5, int r5c6, int r5c7, int r5c8, int r5c9, int r5c10, float r6c1, float r6c2, float r6c3, float r6c4, float r6c5, float r6c6, float r6c7, float r6c8, float r6c9, float r6c10) {
         this.gradeId = gradeId;
         this.CMRId = CMRId;
         this.r1c1 = r1c1;
@@ -511,85 +512,87 @@ public class GradeDistributionDataDAO {
         this.r5c10 = r5c10;
     }
 
-    public int getR6c1() {
+    public float getR6c1() {
         return r6c1;
     }
 
-    public void setR6c1(int r6c1) {
+    public void setR6c1(float r6c1) {
         this.r6c1 = r6c1;
     }
 
-    public int getR6c2() {
+    public float getR6c2() {
         return r6c2;
     }
 
-    public void setR6c2(int r6c2) {
+    public void setR6c2(float r6c2) {
         this.r6c2 = r6c2;
     }
 
-    public int getR6c3() {
+    public float getR6c3() {
         return r6c3;
     }
 
-    public void setR6c3(int r6c3) {
+    public void setR6c3(float r6c3) {
         this.r6c3 = r6c3;
     }
 
-    public int getR6c4() {
+    public float getR6c4() {
         return r6c4;
     }
 
-    public void setR6c4(int r6c4) {
+    public void setR6c4(float r6c4) {
         this.r6c4 = r6c4;
     }
 
-    public int getR6c5() {
+    public float getR6c5() {
         return r6c5;
     }
 
-    public void setR6c5(int r6c5) {
+    public void setR6c5(float r6c5) {
         this.r6c5 = r6c5;
     }
 
-    public int getR6c6() {
+    public float getR6c6() {
         return r6c6;
     }
 
-    public void setR6c6(int r6c6) {
+    public void setR6c6(float r6c6) {
         this.r6c6 = r6c6;
     }
 
-    public int getR6c7() {
+    public float getR6c7() {
         return r6c7;
     }
 
-    public void setR6c7(int r6c7) {
+    public void setR6c7(float r6c7) {
         this.r6c7 = r6c7;
     }
 
-    public int getR6c8() {
+    public float getR6c8() {
         return r6c8;
     }
 
-    public void setR6c8(int r6c8) {
+    public void setR6c8(float r6c8) {
         this.r6c8 = r6c8;
     }
 
-    public int getR6c9() {
+    public float getR6c9() {
         return r6c9;
     }
 
-    public void setR6c9(int r6c9) {
+    public void setR6c9(float r6c9) {
         this.r6c9 = r6c9;
     }
 
-    public int getR6c10() {
+    public float getR6c10() {
         return r6c10;
     }
 
-    public void setR6c10(int r6c10) {
+    public void setR6c10(float r6c10) {
         this.r6c10 = r6c10;
     }
+
+    
      
      public GradeDistributionDataDAO getStatiscalDataByCMRId(int cmrId) {
         GradeDistributionDataDAO gra = null;
@@ -599,7 +602,7 @@ public class GradeDistributionDataDAO {
         con = dbconnect.DBConnect.getConnection();
 
         try {
-            pstm = con.prepareStatement("select * from StatisticalData where CMRId=?");
+            pstm = con.prepareStatement("select * from GradeDistributionData where CMRId=?");
             pstm.setInt(1, cmrId);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -657,16 +660,16 @@ public class GradeDistributionDataDAO {
                 gra.setR5c8(rs.getInt(50));
                 gra.setR5c9(rs.getInt(51));
                 gra.setR5c10(rs.getInt(52));
-                gra.setR6c1(rs.getInt(53));
-                gra.setR6c2(rs.getInt(54));
-                gra.setR6c3(rs.getInt(55));
-                gra.setR6c4(rs.getInt(56));
-                gra.setR6c5(rs.getInt(57));
-                gra.setR6c6(rs.getInt(58));
-                gra.setR6c7(rs.getInt(59));
-                gra.setR6c8(rs.getInt(60));
-                gra.setR6c9(rs.getInt(61));
-                gra.setR6c10(rs.getInt(62));
+                gra.setR6c1(rs.getFloat(53));
+                gra.setR6c2(rs.getFloat(54));
+                gra.setR6c3(rs.getFloat(55));
+                gra.setR6c4(rs.getFloat(56));
+                gra.setR6c5(rs.getFloat(57));
+                gra.setR6c6(rs.getFloat(58));
+                gra.setR6c7(rs.getFloat(59));
+                gra.setR6c8(rs.getFloat(60));
+                gra.setR6c9(rs.getFloat(61));
+                gra.setR6c10(rs.getFloat(62));
                 
             }
 

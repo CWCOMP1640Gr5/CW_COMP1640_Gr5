@@ -106,7 +106,7 @@
                     </div><!--end .container-->
                 </div>
             <center>
-                <form action="ApprovedCMR?CMRId=${requestScope.CMRId}" onclick="return confirm('Are you sure to Approve this CMR?')">
+                <form action="ApprovedCMR?CMRId=${requestScope.CMRId}" >
                 <table border="1">
                                     <tr>
                                         <td colspan="2" style="text-align: center"><h1>COURSE MONITORING REPORT</h1></td>
@@ -180,7 +180,7 @@
                                     </tr>                                   
                                 </table>
                                 <br/>
-                                <table class="table">
+                                <table class="table" style="width: 70%">
                                     <tr>
                                         <td colspan="7" style="text-align: center"><h1>Statistical Data</h1></td>
                                     </tr>
@@ -223,7 +223,7 @@
                                 </table>
                                 <br/>
 
-                                <table class="table" style="width: 50%">
+                                <table class="table" style="width: 70%">
                                     <tr>
                                         <td colspan="11" style="text-align: center"><h1>Grade Distribution Data</h1></td>
                                     </tr>
@@ -328,7 +328,7 @@
                                 <br/>
                                 <table>
                                     <tr>
-                                        <td><input value="APPROVE" type="submit" /></td>                                        
+                                        <td><input value="APPROVE" type="submit" onclick="return confirm('Are you sure to Approve this CMR?')" /></td>                                        
                                         <td><input value="CANCEL" onclick="window.location = 'homePageForCM.jsp';" type="button" /></td>
                                     </tr>
                                 </table>

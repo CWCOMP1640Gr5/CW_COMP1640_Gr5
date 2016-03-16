@@ -490,3 +490,7 @@ display: none;
 .footer-site .footer .coppyright{
 padding-top: 30px;
 }
+.table td input
+{
+    width: 100%;
+}
