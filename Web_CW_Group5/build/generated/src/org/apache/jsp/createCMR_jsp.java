@@ -174,7 +174,7 @@ public final class createCMR_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"row\">\r\n");
       out.write("                        <div class=\"col-sm-12\">\r\n");
       out.write("                            <h3 class=\"centerBox\" style=\"background-color:#2aabd2; text-align:center\">CREATE NEW CMR</h3>\r\n");
-      out.write("                        </div>\r\n");
+      out.write("                       \r\n");
       out.write("                        <center>\r\n");
       out.write("\r\n");
       out.write("                            <form action=\"InsertCMR\" method=\"GET\">\r\n");
@@ -267,7 +267,7 @@ public final class createCMR_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    </tr>                                   \r\n");
       out.write("                                </table>\r\n");
       out.write("                                <br/>\r\n");
-      out.write("                                <table class=\"table\" style=\"width: 100%\">\r\n");
+      out.write("                                <table class=\"table\">\r\n");
       out.write("                                    <tr>\r\n");
       out.write("                                        <td colspan=\"7\" style=\"text-align: center\"><h1>Statistical Data</h1></td>\r\n");
       out.write("                                    </tr>\r\n");
@@ -310,7 +310,7 @@ public final class createCMR_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </table>\r\n");
       out.write("                                <br/>\r\n");
       out.write("\r\n");
-      out.write("                                <table class=\"table\" style=\"width: 100%\">\r\n");
+      out.write("                                <table class=\"table\" style=\"width: 50%\">\r\n");
       out.write("                                    <tr>\r\n");
       out.write("                                        <td colspan=\"11\" style=\"text-align: center\"><h1>Grade Distribution Data</h1></td>\r\n");
       out.write("                                    </tr>\r\n");
@@ -425,7 +425,7 @@ public final class createCMR_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                            </form>\r\n");
       out.write("                        </center>\r\n");
-      out.write("\r\n");
+      out.write("                        </div>\r\n");
       out.write("                    </div><!--end .container-->\r\n");
       out.write("                    </section><!--end .content-->\r\n");
       out.write("\r\n");

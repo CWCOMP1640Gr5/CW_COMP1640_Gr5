@@ -472,4 +472,44 @@ public class AccountDAO implements Serializable{
         }
         return CLname;
     }
+      
+      public AccountDAO getAccountByLastName(String lastName)
+    {       
+        AccountDAO acc = null;
+        Connection con;
+        PreparedStatement pstm=null;
+        ResultSet rs= null;
+        con= dbconnect.DBConnect.getConnection();
+        
+        try
+        {
+            pstm= con.prepareStatement("select * from Account where lastName=?");
+            pstm.setString(1, lastName);
+            rs= pstm.executeQuery();
+            while (rs.next()) {                
+                acc= new AccountDAO();
+                    
+                acc.setAccountId(rs.getInt(1));
+                acc.setFirtsName(rs.getString(2));
+                acc.setLastName(rs.getString(3));
+                acc.setAddress(rs.getString(4));
+                acc.setDepartmentId(rs.getInt(5));
+                acc.setStaffId(rs.getInt(6));
+                acc.setPhone(rs.getInt(7));
+                acc.setUserName(rs.getString(8));
+                acc.setPassword(rs.getString(9));
+                acc.setPermission(rs.getString(10));
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            dbconnect.DBConnect.closeAll(con, pstm, rs);
+        }
+        
+        return acc;
+    }
 }

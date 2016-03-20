@@ -121,17 +121,17 @@ public class LoginProcess extends HttpServlet {
 
                 }
                 if (rs.getString("permission").equals(cm)) {
-                    Cookie linkpages = new Cookie("linkpages", "homePageForCM.jsp");
+                    Cookie linkpages = new Cookie("linkpages", "PreLoadHomeCM");
                     linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
                     response.addCookie(linkpages);
-                    request.getRequestDispatcher("homePageForCM.jsp").forward(request, response);
+                    request.getRequestDispatcher("PreLoadHomeCM").forward(request, response);
 
                 }
                 if (rs.getString("permission").equals(pvc) || rs.getString("permission").equals(dtl)) {
-                    Cookie linkpages = new Cookie("linkpages", "homePageForDirection.jsp");
+                    Cookie linkpages = new Cookie("linkpages", "LoadHomeForDirection");
                     linkpages.setMaxAge(60 * 60 * 24 * 30); // 1 month
                     response.addCookie(linkpages);
-                    request.getRequestDispatcher("homePageForDirection.jsp").forward(request, response);
+                    request.getRequestDispatcher("LoadHomeForDirection").forward(request, response);
 
                 }
 

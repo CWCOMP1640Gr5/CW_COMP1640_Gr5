@@ -45,8 +45,12 @@ public class LogoutProcess extends HttpServlet {
         //huy cookie:
         Cookie cUser = new Cookie("user", null);
         Cookie cPass = new Cookie("pass", null);
+        Cookie cLName = new Cookie("lastname", null);
+        Cookie linkpages = new Cookie("linkpages", null);
         response.addCookie(cUser);
         response.addCookie(cPass);
+        response.addCookie(cLName);
+        response.addCookie(linkpages);
 
 //        request.getRequestDispatcher("login.jsp").forward(request, response);
         response.sendRedirect("index.jsp");

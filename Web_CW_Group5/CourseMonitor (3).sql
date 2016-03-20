@@ -239,7 +239,7 @@ ON Course.courseId = CourseWork.courseId
  ON CourseWork.courseId = Course.courseId
  Where CourseWork.courseLeader = 'Lee'
 
-select * from CourseMonitorReport s inner join CourseWork e on e.courseWorkId = s.courseWorkId and courserModerator= 'LTestcm' and action ='CreateNew'
+select * from CourseMonitorReport s inner join CourseWork e on e.courseWorkId = s.courseWorkId and courserModerator= 'King' and action ='CreateNew'
 
 select s.* from CourseWork s inner join CourseMonitorReport e on e.courseWorkId = s.courseWorkId and CMRId=1
 
@@ -247,3 +247,5 @@ select * from StatisticalData where CMRId=1
 select * from GradeDistributionData
 
 select courseId from CourseWork where courseWorkId=1
+select * from Account where lastName='LTestcm'
+select * from CourseMonitorReport where commentContent IS NULL and action='Approved'

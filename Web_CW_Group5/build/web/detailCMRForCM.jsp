@@ -79,7 +79,7 @@
                             </li>
                             <li><a href="listCMRForCM">View Course Monitoring Reports</a></li>
                             <li><a href="profileForCM.html">Profile</a></li>
-                            <li><a href="approveCMR.html">Approve Course Monitoring Reports</a></li>
+                            <li><a href="ListAllCMRForCM">List Course Monitoring Reports</a></li>
                         </ul>
                     </div>
                 </div>
