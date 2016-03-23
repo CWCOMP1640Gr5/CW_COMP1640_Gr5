@@ -28,18 +28,18 @@ import java.util.logging.Logger;
  * @author TIEN DAT
  */
 public class CourseReportModel {
-    
+
     private Courses course;
     private ResultSet rs;
     DBConnect conn;
     Connection con;
-    
+
     public List<Courses> getCourses() {
         List<Courses> courceList = new ArrayList<Courses>();
         conn = new DBConnect();
         con = conn.getConnection();
         try {
-            
+
             PreparedStatement ps = con.prepareStatement("select * from [Courses]");
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -63,7 +63,7 @@ public class CourseReportModel {
         }
         return courceList;
     }
-    
+
     public int addCoursesReport(int CWid) {
         java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
         int result = 0;
@@ -84,10 +84,10 @@ public class CourseReportModel {
         } catch (SQLException ex) {
             Logger.getLogger(CourseReportModel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return result;
     }
-    
+
     public boolean addSD(int cmrID, StatisticalData sd) {
         boolean status = false;
         int i = 0;
@@ -126,10 +126,10 @@ public class CourseReportModel {
             Logger.getLogger(CourseReportModel.class.getName()).log(Level.SEVERE, null, ex);
             status = false;
         }
-        
+
         return status;
     }
-    
+
     public boolean addGDD(int cmrID, GradeDistributionData gdd) {
         int i = 0;
         boolean status = false;
@@ -210,16 +210,16 @@ public class CourseReportModel {
             Logger.getLogger(CourseReportModel.class.getName()).log(Level.SEVERE, null, ex);
             status = false;
         }
-        
+
         return status;
     }
-    
+
     public List<CourseMonitorReport> getCMRListForCL(String lastname) {
         List<CourseMonitorReport> courceCMR = new ArrayList<CourseMonitorReport>();
         conn = new DBConnect();
         con = conn.getConnection();
         try {
-            
+
             PreparedStatement ps = con.prepareStatement(" select CourseMonitorReport.CMRId,CourseMonitorReport.action,CourseMonitorReport.startDate, Course.title, CourseWork.courserModerator, CourseWork.studentCount from [CourseMonitorReport]\n"
                     + " INNER join CourseWork\n"
                     + " ON CourseMonitorReport.courseWorkId = CourseWork.courseWorkId\n"
@@ -236,7 +236,7 @@ public class CourseReportModel {
                 c.setTitle(rs.getString("title"));
                 c.setCourserModerator(rs.getString("courserModerator"));
                 c.setStudentCount(rs.getInt("studentCount"));
-                
+
                 courceCMR.add(c);
             }
             rs.close();
@@ -246,7 +246,7 @@ public class CourseReportModel {
         }
         return courceCMR;
     }
-    
+
     public StatisticalData getSDDetail(int CmrId) {
         StatisticalData sd = new StatisticalData();
         conn = new DBConnect();
@@ -282,7 +282,7 @@ public class CourseReportModel {
         }
         return sd;
     }
-    
+
     public GradeDistributionData getGDDDetail(int CmrId) {
         GradeDistributionData gdd = new GradeDistributionData();
         conn = new DBConnect();
@@ -302,7 +302,7 @@ public class CourseReportModel {
                 gdd.setR1c8(rs.getInt("r1c8"));
                 gdd.setR1c9(rs.getInt("r1c9"));
                 gdd.setR1c10(rs.getInt("r1c10"));
-                
+
                 gdd.setR2c1(rs.getInt("r2c1"));
                 gdd.setR2c2(rs.getInt("r2c2"));
                 gdd.setR2c3(rs.getInt("r2c3"));
@@ -313,7 +313,7 @@ public class CourseReportModel {
                 gdd.setR2c8(rs.getInt("r2c8"));
                 gdd.setR2c9(rs.getInt("r2c9"));
                 gdd.setR2c10(rs.getInt("r2c10"));
-                
+
                 gdd.setR3c1(rs.getInt("r3c1"));
                 gdd.setR3c2(rs.getInt("r3c2"));
                 gdd.setR3c3(rs.getInt("r3c3"));
@@ -324,7 +324,7 @@ public class CourseReportModel {
                 gdd.setR3c8(rs.getInt("r3c8"));
                 gdd.setR3c9(rs.getInt("r3c9"));
                 gdd.setR3c10(rs.getInt("r3c10"));
-                
+
                 gdd.setR4c1(rs.getInt("r4c1"));
                 gdd.setR4c2(rs.getInt("r4c2"));
                 gdd.setR4c3(rs.getInt("r4c3"));
@@ -335,7 +335,7 @@ public class CourseReportModel {
                 gdd.setR4c8(rs.getInt("r4c8"));
                 gdd.setR4c9(rs.getInt("r4c9"));
                 gdd.setR4c10(rs.getInt("r4c10"));
-                
+
                 gdd.setR5c1(rs.getInt("r5c1"));
                 gdd.setR5c2(rs.getInt("r5c2"));
                 gdd.setR5c3(rs.getInt("r5c3"));
@@ -346,7 +346,7 @@ public class CourseReportModel {
                 gdd.setR5c8(rs.getInt("r5c8"));
                 gdd.setR5c9(rs.getInt("r5c9"));
                 gdd.setR5c10(rs.getInt("r5c10"));
-                
+
                 gdd.setR6c1(rs.getInt("r6c1"));
                 gdd.setR6c2(rs.getInt("r6c2"));
                 gdd.setR6c3(rs.getInt("r6c3"));
@@ -365,7 +365,7 @@ public class CourseReportModel {
         }
         return gdd;
     }
-    
+
     public int setTrueisHadCMR(int cwID) {
         int result = 0;
         try {
@@ -380,8 +380,51 @@ public class CourseReportModel {
         } catch (SQLException ex) {
             Logger.getLogger(CourseReportModel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return result;
     }
-    
+
+    public CourseMonitorReport getCMRDetail(int cmrID) {
+        CourseMonitorReport c = new CourseMonitorReport();
+        conn = new DBConnect();
+        con = conn.getConnection();
+        try {
+
+            PreparedStatement ps = con.prepareStatement("select r.*, c.*, o.title, d.departmentName from CourseMonitorReport r\n"
+                    + "INNER JOIN CourseWork c\n"
+                    + "ON r.courseWorkId = c.courseWorkId\n"
+                    + "INNER JOIN Course o\n"
+                    + "ON o.courseId = c.courseId\n"
+                    + "INNER JOIN Department d\n"
+                    + "ON c.departmentId = d.departmentId\n"
+                    + "WHERE r.CMRId = ?");
+            ps.setInt(1, cmrID);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                c.setCMRId(rs.getInt("CMRId"));
+                c.setCommentContent(rs.getString("commentContent"));
+                c.setCostUnit(rs.getString("costUnit"));
+                c.setCourseId(rs.getString("courseId"));
+                c.setCourseLeader(rs.getString("courseLeader"));
+                c.setCourseWorkId(rs.getInt("courseWorkId"));
+                c.setCourserModerator(rs.getString("courserModerator"));
+                c.setCourserUnits(rs.getInt("courserUnits"));
+                c.setCreateDate(rs.getDate("createDate"));
+                c.setDepartment(rs.getString("departmentName"));
+                c.setDepartmentId(rs.getInt("departmentId"));
+                c.setSemester(rs.getInt("semester"));
+                c.setStartDate(rs.getDate("startDate"));
+                c.setStudentCount(rs.getInt("studentCount"));
+                c.setTitle(rs.getString("title"));
+                c.setAction(rs.getString("action"));
+                c.setYearMaking(rs.getInt("yearMaking"));
+            }
+            rs.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return c;
+    }
+
 }

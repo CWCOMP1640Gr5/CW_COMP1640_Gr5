@@ -9,6 +9,9 @@ import bean.CourseDAO;
 import bean.CourseWorkDAO;
 import bean.GradeDistributionDataDAO;
 import bean.StatisticalDataDAO;
+import entity.CourseMonitorReport;
+import entity.GradeDistributionData;
+import entity.StatisticalData;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.CourseReportModel;
 
 /**
  *
@@ -36,28 +40,18 @@ public class DetailCRMForCM extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         int cmrId = Integer.parseInt(request.getParameter("CMRId"));
-        
-        String courseId = new CourseDAO().getCourseIdByCourseWorkId(cmrId);
-        
-        CourseDAO course = new CourseDAO().getCourseBycourseId(courseId);
-        
-        CourseWorkDAO cou = new CourseWorkDAO().getCourseWorkByCMRId(cmrId);
-        
-        StatisticalDataDAO sta = new StatisticalDataDAO().getStatiscalDataByCMRId(cmrId);
-        
-        GradeDistributionDataDAO gra = new GradeDistributionDataDAO().getStatiscalDataByCMRId(cmrId);
-        
-        
-        request.setAttribute("CMRId", cmrId);
-        request.setAttribute("Course", course);
-        request.setAttribute("CourseWork", cou);
-        request.setAttribute("StaData", sta);
-        request.setAttribute("GradeData", gra);
+
+        CourseReportModel crm = new CourseReportModel();
+        CourseMonitorReport cmrDetail = crm.getCMRDetail(cmrId);
+        StatisticalData sdDetail = crm.getSDDetail(cmrId);
+        GradeDistributionData gddDetail = crm.getGDDDetail(cmrId);
+        request.setAttribute("cmrDetail", cmrDetail);
+        request.setAttribute("sdDetail", sdDetail);
+        request.setAttribute("gddDetail", gddDetail);
         request.getRequestDispatcher("detailCMRForCM.jsp").forward(request, response);
-        
-        
+
 //        try (PrintWriter out = response.getWriter()) {
 //            /* TODO output your page here. You may use following sample code. */
 //            out.println("<!DOCTYPE html>");

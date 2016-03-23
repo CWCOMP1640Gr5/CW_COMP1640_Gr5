@@ -67,6 +67,7 @@ CREATE TABLE Account
 	departmentId int references Department(departmentID) NOT NULL,
 	staffId int references Staff(staffId) NOT NULL,
 	phone int NULL,
+	email nvarchar(50) not null,
 	userName varchar(50) NOT NULL,
 	password varchar(50) NOT NULL,
 	permission varchar(20) NOT NULL
@@ -183,16 +184,16 @@ INSERT INTO Staff VALUES('Director of Learning and Quality')
 INSERT INTO Staff VALUES('Admin')
 INSERT INTO Staff VALUES('Teacher')
 
-INSERT INTO Account VALUES('Lena','Smith','Ha Noi',1,1,0126521478,'CLsmith','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('Nicol','Green','Hai Phong',1,2,0136521478,'CMgreen','gnzLDuqKcGxMNKFokfhOew==','CM')
-INSERT INTO Account VALUES('Tom','Taylor','Ha Noi',2,1,0126521478,'CLtaylor','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('Paul','Miller','Hai Phong',2,2,0136521478,'CMmiller','gnzLDuqKcGxMNKFokfhOew==','CM')
-INSERT INTO Account VALUES('Ailen','Lee','Ha Noi',3,1,0126521478,'CLlee','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('David','King','Hai Phong',3,2,0136521478,'CMking','gnzLDuqKcGxMNKFokfhOew==','CM')
-INSERT INTO Account VALUES('Brad','Feld','Ha Noi',3,3,0126521478,'PVCfeld','gnzLDuqKcGxMNKFokfhOew==','PVC')
-INSERT INTO Account VALUES('Fred','Wilson','Hai Phong',3,4,0136521478,'DTLwilson','gnzLDuqKcGxMNKFokfhOew==','DTL')
-INSERT INTO Account VALUES('Marissa','Mayer','Ha Noi',3,5,0126521478,'ADMmayer','gnzLDuqKcGxMNKFokfhOew==','ADM')
-INSERT INTO Account VALUES('Meg','Jobs','Hai Phong',3,6,0136521478,'GUjobs','gnzLDuqKcGxMNKFokfhOew==','GU')
+INSERT INTO Account VALUES('Lena','Smith','Ha Noi',1,1,0126521478,'dattranvan22@gmail.com','CLsmith','gnzLDuqKcGxMNKFokfhOew==','CL')
+INSERT INTO Account VALUES('Nicol','Green','Hai Phong',1,2,0136521478,'dattranvan22@gmail.com','CMgreen','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Tom','Taylor','Ha Noi',2,1,0126521478,'dattranvan22@gmail.com','CLtaylor','gnzLDuqKcGxMNKFokfhOew==','CL')
+INSERT INTO Account VALUES('Paul','Miller','Hai Phong',2,2,0136521478,'dattranvan22@gmail.com','CMmiller','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Ailen','Lee','Ha Noi',3,1,0126521478,'dattranvan22@gmail.com','CLlee','gnzLDuqKcGxMNKFokfhOew==','CL')
+INSERT INTO Account VALUES('David','King','Hai Phong',3,2,0136521478,'dattranvan22@gmail.com','CMking','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Brad','Feld','Ha Noi',3,3,0126521478,'dattranvan22@gmail.com','PVCfeld','gnzLDuqKcGxMNKFokfhOew==','PVC')
+INSERT INTO Account VALUES('Fred','Wilson','Hai Phong',3,4,0136521478,'dattranvan22@gmail.com','DTLwilson','gnzLDuqKcGxMNKFokfhOew==','DTL')
+INSERT INTO Account VALUES('Marissa','Mayer','Ha Noi',3,5,0126521478,'dattranvan22@gmail.com','ADMmayer','gnzLDuqKcGxMNKFokfhOew==','ADM')
+INSERT INTO Account VALUES('Meg','Jobs','Hai Phong',3,6,0136521478,'dattranvan22@gmail.com','GUjobs','gnzLDuqKcGxMNKFokfhOew==','GU')
 
 
 INSERT INTO CourseWork VALUES('C12395',1,'Lee','Wilson',GETDATE(),2015,1,41,14,'hours',1)
@@ -249,3 +250,12 @@ select * from GradeDistributionData
 select courseId from CourseWork where courseWorkId=1
 select * from Account where lastName='LTestcm'
 select * from CourseMonitorReport where commentContent IS NULL and action='Approved'
+
+select r.*, c.*, o.title, d.departmentName from CourseMonitorReport r
+INNER JOIN CourseWork c
+ON r.courseWorkId = c.courseWorkId
+INNER JOIN Course o
+ON o.courseId = c.courseId
+INNER JOIN Department d
+ON c.departmentId = d.departmentId
+WHERE r.CMRId = 1

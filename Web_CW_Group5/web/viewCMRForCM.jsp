@@ -88,254 +88,249 @@
 
 
 
-        <section class="content">
-            <div class="container">
+<section class="content">
 
+            <div id="exTab2" class="container">	
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a  href="#1" data-toggle="tab">Course Information</a>
+                    </li>
+                    <li><a href="#2" data-toggle="tab">Monitor Report</a>
+                    </li>
+                    <li><a href="#3" data-toggle="tab">Comment</a>
+                    </li>
+                </ul>
 
-                <div class="new-lists">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Welcome to Course Monitor</h3>
+                <div class="tab-content ">
+                    <div class="tab-pane active" id="1">
+
+                        <div class="panel panel-blue margin-bottom-40">
+                            <div class="panel-body">
+
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input readonly="true" id="title" class="form-control" type="text" value="${cmrDetail.title}" name="title" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="coursecode">Course Code</label>
+                                    <input readonly="true" id="coursecode" class="form-control" type="text" name="coursecode" value="${cmrDetail.courseId}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="coursecode">Courser Moderator</label>
+                                    <input readonly="true" id="coursecode" class="form-control" type="text" name="coursecode" value="${cmrDetail.courserModerator}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="coursecode">Action</label>
+                                    <input readonly="true" id="coursecode" class="form-control" type="text" name="coursecode" value="${cmrDetail.action}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="coursecode">Department</label>
+                                    <input readonly="true" id="coursecode" class="form-control" type="text" name="coursecode" value="${cmrDetail.department}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="coursecode">Courser Units</label>
+                                    <input readonly="true" id="coursecode" class="form-control" type="text" name="coursecode" value="${cmrDetail.courserUnits}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="yearmarking">Year</label>
+                                    <input readonly="true" class="form-control" id="yearmarking" type="text" value="${cmrDetail.yearMaking}" name="yearmarking" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="semester">Semester</label>
+                                    <input readonly="true" class="form-control" id="yearmarking" type="text" value="${cmrDetail.semester}" name="semester" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="createdate">Date Create</label>
+                                    <input readonly="true" id="createdate" class="form-control" type="text" value="${cmrDetail.createDate}" name="createdate" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="studentcounnt">Student count</label>
+                                    <input readonly="true" id="studentcounnt" class="form-control" type="number" value="${cmrDetail.studentCount}" name="studentcounnt" />
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                        
+
+                    </div>
+                    <div class="tab-pane" id="2">
+                        <form method="GET" action="EditCMRDetailCL">
+                            <div class="form-group">
+                                <div class="panel-heading" style="    background-color: yellowgreen;
+                                     color: #FFF;
+                                     font-size: large;
+                                     font-weight: bolder;">Statistical Data</div>
+                                <div class="table-responsive">
+                                    <table class="table" style="width: 100%">
+                                        <thead>
+                                            <tr class="success">
+                                                <td></td>
+                                                <td>CW1</td>
+                                                <td>CW2</td>
+                                                <td>CW3</td>
+                                                <td>CW4</td>
+                                                <td>EXAM</td>
+                                                <td>OVERALL</td>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td  style="background: #d9edf7;">Mean</td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw1r1}" readonly="true" type="text" name="cw1r1" class="r1" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw2r1}" readonly="true" type="text" name="cw2r1" class="r1" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw3r1}" readonly="true" type="text" name="cw3r1" class="r1" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw4r1}" readonly="true" type="text" name="cw4r1"  class="r1" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.examr1}" readonly="true" type="text" name="examr1" class="r1" /></td>
+                                            <td><input readonly="true" value="${sdDetail.over1r1}" type="text" name="overr1" id="over1" readonly class="over1" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #d9edf7;">Median</td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw1r2}" type="text" name="cw1r2" class="r2" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw2r2}" type="text" name="cw2r2" class="r2" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw3r2}" type="text" name="cw3r2" class="r2" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw4r2}" type="text" name="cw4r2" class="r2" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.exam1r2}" type="text" name="examr2" class="r2" /></td>
+                                            <td><input type="text" value="${sdDetail.overr2}" name="overr2" readonly class="over2" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #d9edf7;">Standard Deviation</td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw1r3}" type="text" name="cw1r3" class="r3" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw2r3}" type="text" name="cw2r3" class="r3" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw3r3}" type="text" name="cw3r3" class="r3" /></td>
+                                            <td><input id="inputnumber" value="${sdDetail.cw4r3}" type="text" name="cw4r3" class="r3" /></td>
+                                            <td><input  id="inputnumber" value="${sdDetail.exam1r3}" type="text" name="examr3" class="r3" /></td>
+                                            <td><input type="text" name="overr3" value="${sdDetail.overr3}" readonly class="over3" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br/>
+                                <div class="panel-heading" style="    background-color: yellowgreen;
+                                     color: #FFF;
+                                     font-size: large;
+                                     font-weight: bolder;">Grade Distribution Data</div>
+                                <div class="table-responsive">
+                                    <table class="table" style="width: 100%">
+                                        <thead>
+                                            <tr class="success">
+                                                <td></td>
+                                                <td >0–9</td>
+                                                <td>10-19</td>
+                                                <td>20-29</td>
+                                                <td>30-39</td>
+                                                <td>40-49</td>
+                                                <td>50-59</td>
+                                                <td>60-69</td>
+                                                <td>70-79</td>
+                                                <td>80-89</td>
+                                                <td>90+</td>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td class="tdinfo">CW1</td>
+                                            <td><input readonly="true" value="${gddDetail.r1c1}" type="text" id="inputnumber" name="r1c1" class="c1" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c2}"  type="text" id="inputnumber" name="r1c2" class="c2" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c3}"  type="text" id="inputnumber" name="r1c3" class="c3" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c4}"  type="text" id="inputnumber" name="r1c4" class="c4" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c5}"  type="text" id="inputnumber" name="r1c5" class="c5" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c6}"  type="text" id="inputnumber" name="r1c6" class="c6" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c7}"  type="text" id="inputnumber" name="r1c7" class="c7" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c8}"  type="text" id="inputnumber" name="r1c8" class="c8" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c9}"  type="text" id="inputnumber" name="r1c9" class="c9" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r1c10}"  type="text" id="inputnumber" name="r1c10" class="c10" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tdinfo">CW2</td>
+                                            <td><input readonly="true" value="${gddDetail.r2c1}"  type="text" id="inputnumber" name="r2c1" class="c1" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c2}"  type="text" id="inputnumber" name="r2c2" class="c2" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c3}"  type="text" id="inputnumber" name="r2c3" class="c3" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c4}"  type="text" id="inputnumber" name="r2c4" class="c4" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c5}"  type="text" id="inputnumber" name="r2c5" class="c5" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c6}"  type="text" id="inputnumber" name="r2c6" class="c6" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c7}"  type="text" id="inputnumber" name="r2c7" class="c7" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c8}"  type="text" id="inputnumber" name="r2c8" class="c8" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c9}"  type="text" id="inputnumber" name="r2c9" class="c9" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r2c10}"  type="text" id="inputnumber" name="r2c10" class="c10" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tdinfo">CW3</td>
+                                            <td><input readonly="true" value="${gddDetail.r3c1}"  type="text" id="inputnumber" name="r3c1" class="c1" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c2}"  type="text" id="inputnumber" name="r3c2" class="c2" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c3}"  type="text" id="inputnumber" name="r3c3" class="c3" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c4}"  type="text" id="inputnumber" name="r3c4" class="c4" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c5}"  type="text" id="inputnumber" name="r3c5" class="c5" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c6}"  type="text" id="inputnumber" name="r3c6" class="c6" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c7}"  type="text" id="inputnumber" name="r3c7" class="c7" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c8}"  type="text" id="inputnumber" name="r3c8" class="c8" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c9}"  type="text" id="inputnumber" name="r3c9" class="c9" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r3c10}"  type="text" id="inputnumber" name="r3c10" class="c10" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tdinfo">CW4</td>
+                                            <td><input readonly="true" value="${gddDetail.r4c1}"  type="text" name="r4c1" id="inputnumber" class="c1" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c2}"  type="text" name="r4c2" id="inputnumber" class="c2" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c3}"  type="text" name="r4c3" id="inputnumber" class="c3" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c4}"  type="text" name="r4c4" id="inputnumber" class="c4" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c5}"  type="text" name="r4c5" id="inputnumber" class="c5" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c6}"  type="text" name="r4c6" id="inputnumber" class="c6" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c7}"  type="text" name="r4c7" id="inputnumber" class="c7" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c8}"  type="text" name="r4c8" id="inputnumber" class="c8" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c9}" type="text" name="r4c9" id="inputnumber" class="c9" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r4c10}" type="text" name="r4c10" id="inputnumber" class="c10" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tdinfo">EX</td>
+                                            <td><input readonly="true" value="${gddDetail.r5c1}"  type="text" name="r5c1" id="inputnumber" class="c1" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c2}"  type="text" name="r5c2" id="inputnumber" class="c2" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c3}"  type="text" name="r5c3" id="inputnumber" class="c3" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c4}"  type="text" name="r5c4" id="inputnumber" class="c4" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c5}"  type="text" name="r5c5" id="inputnumber" class="c5" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c6}"  type="text" name="r5c6" id="inputnumber" class="c6" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c7}"  type="text" name="r5c7" id="inputnumber" class="c7" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c8}"  type="text" name="r5c8" id="inputnumber" class="c8" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c9}"  type="text" name="r5c9" id="inputnumber" class="c9" /></td>
+                                            <td><input readonly="true" value="${gddDetail.r5c10}"  type="text" name="r5c10" id="inputnumber" class="c10" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tdinfo">OVERALL</td>
+                                            <td><input type="text" value="${gddDetail.r6c1}" readonly name="r6c1" class="gddov1" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c2}" readonly name="r6c2" class="gddov2" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c3}" readonly name="r6c3" class="gddov3" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c4}" readonly name="r6c4" class="gddov4" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c5}" readonly name="r6c5" class="gddov5" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c6}" readonly  name="r6c6" class="gddov6" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c7}" readonly name="r6c7" class="gddov7" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c8}" readonly name="r6c8" class="gddov8" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c9}" readonly name="r6c9" class="gddov9" /></td>
+                                            <td><input type="text" value="${gddDetail.r6c10}" readonly name="r6c10" class="gddov10" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="tab-pane" id="3">
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" readonly="true" value rows="5" id="comment">
+                                ${cmrDetail.commentContent}
+                            </textarea>
                         </div>
-
-
-
-                    </div><!--end .container-->
+                    </div>
+                    <div class="col-sm-4">
+                         <input value="DONE" class="btn btn-warning" onclick="window.location = 'homePageForCM.jsp';" type="button" />
+                    </div>
                 </div>
-            <center>
-                
-                <table border="1">
-                                    <tr>
-                                        <td colspan="2" style="text-align: center"><h1>COURSE MONITORING REPORT</h1></td>
-                                        <td>
-                                            <input type="text" name="txtCMRId" value="${requestScope.CMRId}" hidden="true"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Academic Session</td>
-                                        <td>
-                                            <input readonly="true" type="number" name="academicsession" value="${requestScope.CourseWork.courseWorkId}" />
-                                        </td>
-                                    </tr>
+                </form>
 
-                                    <tr>
-                                        <td>Course Code</td>
-                                        <td>
-                                            <input readonly="true" type="text" name="coursecode" value="${requestScope.CourseWork.courseId}" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Title</td>
-                                        <td>
-                                            <input readonly="true" type="text" value="${requestScope.Course.title}" name="title" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Year</td>
-                                        <td>
-                                            <input readonly="true" type="text" value="${requestScope.CourseWork.yearMaking}" name="yearmarking" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Semester</td>
-                                        <td>
-                                            <input readonly="true" type="text" value="${requestScope.CourseWork.semester}" name="semester" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Date Create</td>
-                                        <td>
-                                            <input readonly="true" type="text" value="${requestScope.CourseWork.createDate}" name="createdate" />
-                                        </td>
-                                    </tr>
-                                    <%
-                                        Cookie cookie = null;
-                                        Cookie[] cookies = null;
-                                        String lastname = null;
-                                        // Get an array of Cookies associated with this domain
-                                        cookies = request.getCookies();
-                                        if (cookies != null) {
-                                            for (int i = 0; i < cookies.length; i++) {
-                                                cookie = cookies[i];
-                                                if (cookie.getName().equals("lastname")) {
-                                                    lastname = cookie.getValue();
-                                                }
-                                            }
-                                        }
-                                    %>
-                                    <tr>
-                                        <td>Course Leader:</td>
-                                        <td>
-                                            <input readonly="true" type="text" value="${requestScope.CourseWork.courseLeader}" name="courseleader" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Student count</td>
-                                        <td>
-                                            <input readonly="true" type="number" value="${requestScope.CourseWork.studentCount}" name="studentcounnt" />
-                                        </td>
-                                    </tr>                                   
-                                </table>
-                                <br/>
-                                <table class="table" style="width: 70%">
-                                    <tr>
-                                        <td colspan="7" style="text-align: center"><h1>Statistical Data</h1></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>CW1</td>
-                                        <td>CW2</td>
-                                        <td>CW3</td>
-                                        <td>CW4</td>
-                                        <td>EXAM</td>
-                                        <td>OVERALL</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mean</td>
-                                        <td><input type="number" name="cw1r1" id="r1" class="r1" value="${requestScope.StaData.cw1r1}" readonly="readonly" /></td>
-                                        <td><input type="number" name="cw2r1" id="r1" class="r1" value="${requestScope.StaData.cw2r1}" readonly="readonly" /></td>
-                                        <td><input type="number" name="cw3r1" id="r1" class="r1" value="${requestScope.StaData.cw3r1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw4r1" id="r1" class="r1" value="${requestScope.StaData.cw4r1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="examr1" id="r1" class="r1" value="${requestScope.StaData.examr1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="overr1" value="${requestScope.StaData.over1r1}" readonly  /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Median</td>
-                                        <td><input type="number" name="cw1r2" class="r2" value="${requestScope.StaData.cw1r2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw2r2" class="r2" value="${requestScope.StaData.cw2r2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw3r2" class="r2" value="${requestScope.StaData.cw3r2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw4r2" class="r2" value="${requestScope.StaData.cw4r2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="examr2" class="r2" value="${requestScope.StaData.exam1r2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="overr2" readonly  value="${requestScope.StaData.overr2}" readonly="readonly"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Standard Deviation</td>
-                                        <td><input type="number" name="cw1r3" class="r3" value="${requestScope.StaData.cw1r3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw2r3" class="r3" value="${requestScope.StaData.cw2r3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw3r3" class="r3" value="${requestScope.StaData.cw3r3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="cw4r3" class="r3" value="${requestScope.StaData.cw4r3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="examr3" class="r3" value="${requestScope.StaData.exam1r3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="overr3" value="${requestScope.StaData.overr3}" readonly="readonly" /></td>
-                                    </tr>
-                                </table>
-                                <br/>
 
-                                <table class="table" style="width: 70%">
-                                    <tr>
-                                        <td colspan="11" style="text-align: center"><h1>Grade Distribution Data</h1></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>0–9</td>
-                                        <td>10-19</td>
-                                        <td>20-29</td>
-                                        <td>30-39</td>
-                                        <td>40-49</td>
-                                        <td>50-59</td>
-                                        <td>60-69</td>
-                                        <td>70-79</td>
-                                        <td>80-89</td>
-                                        <td>90+</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CW1</td>
-                                        <td><input type="number" name="r1c1"  value="${requestScope.GradeData.r1c1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c2"  value="${requestScope.GradeData.r1c2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c3"  value="${requestScope.GradeData.r1c3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c4"  value="${requestScope.GradeData.r1c4}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c5"  value="${requestScope.GradeData.r1c5}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c6"  value="${requestScope.GradeData.r1c6}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c7"  value="${requestScope.GradeData.r1c7}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c8"  value="${requestScope.GradeData.r1c8}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c9"  value="${requestScope.GradeData.r1c9}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r1c10"  value="${requestScope.GradeData.r1c10}" readonly="readonly"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>CW2</td>
-                                        <td><input type="number" name="r2c1"  value="${requestScope.GradeData.r2c1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c2"  value="${requestScope.GradeData.r2c2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c3"  value="${requestScope.GradeData.r2c3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c4"  value="${requestScope.GradeData.r2c4}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c5" value="${requestScope.GradeData.r2c5}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c6"  value="${requestScope.GradeData.r2c6}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c7"  value="${requestScope.GradeData.r2c7}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c8"  value="${requestScope.GradeData.r2c8}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c9"  value="${requestScope.GradeData.r2c9}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r2c10"  value="${requestScope.GradeData.r2c10}" readonly="readonly"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>CW3</td>
-                                        <td><input type="number" name="r3c1"  value="${requestScope.GradeData.r3c1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c2"  value="${requestScope.GradeData.r3c2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c3"  value="${requestScope.GradeData.r3c3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c4"  value="${requestScope.GradeData.r3c4}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c5"  value="${requestScope.GradeData.r3c5}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c6"  value="${requestScope.GradeData.r3c6}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c7"  value="${requestScope.GradeData.r3c7}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c8"  value="${requestScope.GradeData.r3c8}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c9"  value="${requestScope.GradeData.r3c9}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r3c10"  value="${requestScope.GradeData.r3c10}" readonly="readonly"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>CW4</td>
-                                        <td><input type="number" name="r4c1"  value="${requestScope.GradeData.r4c1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c2"  value="${requestScope.GradeData.r4c2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c3"  value="${requestScope.GradeData.r4c3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c4"  value="${requestScope.GradeData.r4c4}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c5"  value="${requestScope.GradeData.r4c5}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c6"  value="${requestScope.GradeData.r4c6}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c7"  value="${requestScope.GradeData.r4c7}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c8"  value="${requestScope.GradeData.r4c8}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c9"  value="${requestScope.GradeData.r4c9}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r4c10"  value="${requestScope.GradeData.r4c10}" readonly="readonly"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>EX</td>
-                                        <td><input type="number" name="r5c1"  value="${requestScope.GradeData.r5c1}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c2"  value="${requestScope.GradeData.r5c2}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c3"  value="${requestScope.GradeData.r5c3}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c4"  value="${requestScope.GradeData.r5c4}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c5" value="${requestScope.GradeData.r5c5}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c6"  value="${requestScope.GradeData.r5c6}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c7"  value="${requestScope.GradeData.r5c7}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c8"  value="${requestScope.GradeData.r5c8}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c9" value="${requestScope.GradeData.r5c9}" readonly="readonly"/></td>
-                                        <td><input type="number" name="r5c10"  value="${requestScope.GradeData.r5c10}" readonly="readonly"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>OVERALL</td>
-                                        <td><input type="number" readonly name="r6c1"  value="${requestScope.GradeData.r6c1}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c2"  value="${requestScope.GradeData.r6c2}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c3"  value="${requestScope.GradeData.r6c3}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c4"  value="${requestScope.GradeData.r6c4}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c5"  value="${requestScope.GradeData.r6c5}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly  name="r6c6"  value="${requestScope.GradeData.r6c6}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c7"  value="${requestScope.GradeData.r6c7}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c8"  value="${requestScope.GradeData.r6c8}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c9"  value="${requestScope.GradeData.r6c9}" readonly="readonly"/></td>
-                                        <td><input type="number" readonly name="r6c10"  value="${requestScope.GradeData.r6c10}" readonly="readonly"/></td>
-                                    </tr>
-                                </table>
-                                <br/>
-                                <br/>
-                                <table>
-                                    <tr>
-                                                                                
-                                        <td><input value="HOME" onclick="window.location = 'LoadHomeCM';" type="button" /></td>
-                                    </tr>
-                                </table>
-               
-            </center>
-            
+                <!-- Bootstrap core JavaScript
+                    ================================================== -->
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         </section><!--end .content-->
+
 
         <footer class="footer">
             <div class="footer-custom">

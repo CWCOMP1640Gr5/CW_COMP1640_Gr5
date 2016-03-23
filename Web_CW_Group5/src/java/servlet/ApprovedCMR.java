@@ -44,7 +44,7 @@ public class ApprovedCMR extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        int cmrId = Integer.parseInt(request.getParameter("txtCMRId"));
+        int cmrId = Integer.parseInt(request.getParameter("txtCmrId"));
         
         
         boolean kq = false;

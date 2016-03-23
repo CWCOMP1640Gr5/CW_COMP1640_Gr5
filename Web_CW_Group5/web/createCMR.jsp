@@ -326,7 +326,7 @@
                                     <tr>
                                         <td><input value="CREATE" type="submit" /></td>
                                         <td><input value="RESET" type="reset" /> </td>
-                                        <td><input value="CANCEL" onclick="window.location = 'viewCMR.jsp';" type="button" /></td>
+                                        <td><input value="CANCEL" onclick="window.location = 'homePageForCL.jsp';" type="button" /></td>
                                     </tr>
                                 </table>
 

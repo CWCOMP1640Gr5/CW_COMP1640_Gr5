@@ -16,22 +16,40 @@ public class CourseMonitorReport {
     private int CMRId;
     private int courseWorkId;
     private String commentContent;
+    private Date createDate;
     private String action;
     private Date startDate;
     private String isStatus;
     private String title;
     private String CourseId;
     private int departmentId;
+    private String department;
     private String courserModerator;
     private String courseLeader;
     private int yearMaking;
     private int semester;
     private int studentCount;
     private int courserUnits;
-    private int costUnit;
+    private String costUnit;
 
     public String getTitle() {
         return title;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public void setTitle(String title) {
@@ -102,15 +120,13 @@ public class CourseMonitorReport {
         this.courserUnits = courserUnits;
     }
 
-    public int getCostUnit() {
+    public String getCostUnit() {
         return costUnit;
     }
 
-    public void setCostUnit(int costUnit) {
+    public void setCostUnit(String costUnit) {
         this.costUnit = costUnit;
     }
-    
-    
 
     public int getCMRId() {
         return CMRId;

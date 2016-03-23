@@ -83,7 +83,7 @@
                             <li><a href="ListCourseWorkForCL">List CourseWork</a></li>
                             <li><a href="getCMRCLServlet">View Course Monitoring Reports</a></li>
                             <li><a href="profileCL.html">Profile</a></li>
-                            <li><a href="sentCMR.html">Sent Course Monitoring Reports</a></li>
+                            <li><a href="logOut.html">Log out</a></li>
                         </ul>
                     </div>
                 </div>
