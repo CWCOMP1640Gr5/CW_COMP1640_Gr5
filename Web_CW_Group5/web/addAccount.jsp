@@ -52,38 +52,38 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
 
-                        <li class="active"><a href="#">Account <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Account <span class="sr-only">(current)</span></a></li>
                         <li><a href="addAccount.jsp">Add Account</a></li>
                         <li><a href="LoadHomeAdmin">List Account</a></li>
 
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Courser Work <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Courser Work <span class="sr-only">(current)</span></a></li>
                         <li><a href="ListCourseWorkAdmin">List Course Work</a></li>
                         <li><a href="PreAddCourseWork">Add New Course Work</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Courser <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Course <span class="sr-only">(current)</span></a></li>
                         <li><a href="ListCourseAdmin">List Course</a></li>
                         <li><a href="addNewCourse.jsp">Add New Course</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Department <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Department <span class="sr-only">(current)</span></a></li>
                         <li><a href="ListDepartmentAdmin">List Department</a></li>
-                        <li><a href="addNewDepartment">Add New Department</a></li>
+                        <li><a href="addNewDepartment.jsp">Add New Department</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
 
-                        <li class="active"><a href="#">FeedBack <span class="sr-only">(current)</span></a></li>
-                        <li><a href="ListFeedBack">List Account</a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> FeedBack <span class="sr-only">(current)</span></a></li>
+                        <li><a href="ListFeedBack">List FeedBack</a></li>
 
                     </ul>
                     <ul class="nav nav-sidebar">
 
-                        <li class="active"><a href="#">News <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> News <span class="sr-only">(current)</span></a></li>
                         <li><a href="addNews.jsp">Add News</a></li>
                         <li><a href="ListNews">List News</a></li>
-                        <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
+                        <li><h4><a href="LogoutProcess"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign out</a></h4></li>
                     </ul>
 
                 </div>
@@ -96,11 +96,11 @@
                     <div class="table-responsive">
 
                         <form action="AddNewAccount">
-                            <table border="1">                            
+                            <table border="1" class="table">                            
                                 <tr>
-                                    <td><b><span class="input-group-addon" id="basic-addon1">First Name</span></b></td>
+                                    <td style="width: 15%"><b><span class="input-group-addon" id="basic-addon1" >First Name</span></b></td>
                                     <td>
-                                        <input required="required" type="text" name="txtFirstName" class="form-control" aria-describedby="basic-addon1">
+                                        <input  required="required" type="text" name="txtFirstName" class="form-control" aria-describedby="basic-addon1">
 
                                     </td>
                                 </tr>
@@ -187,8 +187,9 @@
                                 <tr>
                                     <td></td>
                                     <td >
-                                        <input type="submit" value="Add New"/>
-                                        <input type="reset" value="Reset"/>
+                                        <button type="submit" class="btn btn-default navbar-btn">Add New</button>
+                                        <button type="reset" class="btn btn-default navbar-btn">Reset</button>
+                                        
                                     </td>
                                 </tr>
                             </table>

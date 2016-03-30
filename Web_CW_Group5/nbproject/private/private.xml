@@ -3,14 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/listCMRComment.jsp</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/UpdateCommentCMR.java</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/UpdateAccount.java</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/CourseMonitorReportDAO.java</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/CommentCMR.java</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/ViewAppCRMForDirector.java</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/homePageForDirection.jsp</file>
-            <file>file:/E:/CW_COMP1640_Gr5/Web_CW_Group5/web/commentAppCMRForDirector.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/addNewDepartment.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/addNewCourse.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailCourseWorkAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listDepartmentAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailAccount.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/home.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/updateCourseAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/addAccount.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/addNewCourseWork.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailCourseAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/homeAdm.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCourseAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCourseWorkAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listFeedback.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/addNews.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/updateCourseWorkAdmin.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listNewsAdmin.jsp</file>
         </group>
     </open-files>
 </project-private>
