@@ -92,24 +92,24 @@ CREATE TABLE StatisticalData
 (
 	statisId int identity primary key,
 	CMRId int references CourseMonitorReport(CMRId) NOT NULL,
-	cw1r1 int,
-	cw1r2 int,
-	cw1r3 int,
-	cw2r1 int,
-	cw2r2 int,
-	cw2r3 int,
-	cw3r1 int,
-	cw3r2 int,
-	cw3r3 int,
-	cw4r1 int,
-	cw4r2 int,
-	cw4r3 int,
-	examr1 int,
-	exam1r2 int,
-	exam1r3 int,
-	over1r1 float,
-	overr2 float,
-	overr3 float
+	cw1r1 int DEFAULT 0,
+	cw1r2 int DEFAULT 0,
+	cw1r3 int DEFAULT 0,
+	cw2r1 int DEFAULT 0,
+	cw2r2 int DEFAULT 0,
+	cw2r3 int DEFAULT 0,
+	cw3r1 int DEFAULT 0,
+	cw3r2 int DEFAULT 0,
+	cw3r3 int DEFAULT 0,
+	cw4r1 int DEFAULT 0,
+	cw4r2 int DEFAULT 0,
+	cw4r3 int DEFAULT 0,
+	examr1 int DEFAULT 0,
+	exam1r2 int DEFAULT 0,
+	exam1r3 int DEFAULT 0,
+	over1r1 float DEFAULT 0,
+	overr2 float DEFAULT 0,
+	overr3 float DEFAULT 0
 )
 GO 
 
@@ -117,12 +117,12 @@ CREATE TABLE GradeDistributionData
 (
 	gradeId int identity primary key,
 	CMRId int references CourseMonitorReport(CMRId) NOT NULL,
-	r1c1 int,r1c2 int,r1c3 int,r1c4 int,r1c5 int,r1c6 int,r1c7 int,r1c8 int,r1c9 int,r1c10 int,
-	r2c1 int,r2c2 int,r2c3 int,r2c4 int,r2c5 int,r2c6 int,r2c7 int,r2c8 int,r2c9 int,r2c10 int,
-	r3c1 int,r3c2 int,r3c3 int,r3c4 int,r3c5 int,r3c6 int,r3c7 int,r3c8 int,r3c9 int,r3c10 int,
-	r4c1 int,r4c2 int,r4c3 int,r4c4 int,r4c5 int,r4c6 int,r4c7 int,r4c8 int,r4c9 int,r4c10 int,
-	r5c1 int,r5c2 int,r5c3 int,r5c4 int,r5c5 int,r5c6 int,r5c7 int,r5c8 int,r5c9 int,r5c10 int,
-	r6c1 float,r6c2 float,r6c3 float,r6c4 float,r6c5 float,r6c6 float,r6c7 float,r6c8 float,r6c9 float,r6c10 float
+	r1c1 int DEFAULT 0,r1c2 int DEFAULT 0,r1c3 int DEFAULT 0,r1c4 int DEFAULT 0,r1c5 int DEFAULT 0,r1c6 int DEFAULT 0,r1c7 int DEFAULT 0,r1c8 int DEFAULT 0,r1c9 int DEFAULT 0,r1c10 int DEFAULT 0,
+	r2c1 int DEFAULT 0,r2c2 int DEFAULT 0,r2c3 int DEFAULT 0,r2c4 int DEFAULT 0,r2c5 int DEFAULT 0,r2c6 int DEFAULT 0,r2c7 int DEFAULT 0,r2c8 int DEFAULT 0,r2c9 int DEFAULT 0,r2c10 int DEFAULT 0,
+	r3c1 int DEFAULT 0,r3c2 int DEFAULT 0,r3c3 int DEFAULT 0,r3c4 int DEFAULT 0,r3c5 int DEFAULT 0,r3c6 int DEFAULT 0,r3c7 int DEFAULT 0,r3c8 int DEFAULT 0,r3c9 int DEFAULT 0,r3c10 int DEFAULT 0,
+	r4c1 int DEFAULT 0,r4c2 int DEFAULT 0,r4c3 int DEFAULT 0,r4c4 int DEFAULT 0,r4c5 int DEFAULT 0,r4c6 int DEFAULT 0,r4c7 int DEFAULT 0,r4c8 int DEFAULT 0,r4c9 int DEFAULT 0,r4c10 int DEFAULT 0,
+	r5c1 int DEFAULT 0,r5c2 int DEFAULT 0,r5c3 int DEFAULT 0,r5c4 int DEFAULT 0,r5c5 int DEFAULT 0,r5c6 int DEFAULT 0,r5c7 int DEFAULT 0,r5c8 int DEFAULT 0,r5c9 int DEFAULT 0,r5c10 int DEFAULT 0,
+	r6c1 float DEFAULT 0,r6c2 float DEFAULT 0,r6c3 float DEFAULT 0,r6c4 float DEFAULT 0,r6c5 float DEFAULT 0,r6c6 float DEFAULT 0,r6c7 float DEFAULT 0,r6c8 float DEFAULT 0,r6c9 float DEFAULT 0,r6c10 float DEFAULT 0
 )
 
 
@@ -134,7 +134,7 @@ CREATE TABLE FeedBack
 	yourEmail varchar(50),
 	content varchar(255),
 	title varchar(100),
-	timePost dateTime,
+	timePost date DEFAULT GETDATE(),
 	statusFeedBack  bit
 )
 GO
@@ -146,7 +146,7 @@ CREATE TABLE News
 	title varchar(50),
 	image varchar(200),
 	content varchar(700),
-	postDate date
+	postDate date 
 )
 GO
 --Insert
@@ -184,16 +184,16 @@ INSERT INTO Staff VALUES('Director of Learning and Quality')
 INSERT INTO Staff VALUES('Admin')
 INSERT INTO Staff VALUES('Teacher')
 
-INSERT INTO Account VALUES('Lena','Smith','Ha Noi',1,1,0126521478,'dattranvan22@gmail.com','CLsmith','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('Nicol','Green','Hai Phong',1,2,0136521478,'dattranvan22@gmail.com','CMgreen','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Lena','Smith','Ha Noi',1,1,0126521478,'dattranvan20@gmail.com','cltest','gnzLDuqKcGxMNKFokfhOew==','CL')
+INSERT INTO Account VALUES('Nicol','Green','Hai Phong',1,2,0136521478,'dattranvan21@gmail.com','cmtest','gnzLDuqKcGxMNKFokfhOew==','CM')
 INSERT INTO Account VALUES('Tom','Taylor','Ha Noi',2,1,0126521478,'dattranvan22@gmail.com','CLtaylor','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('Paul','Miller','Hai Phong',2,2,0136521478,'dattranvan22@gmail.com','CMmiller','gnzLDuqKcGxMNKFokfhOew==','CM')
-INSERT INTO Account VALUES('Ailen','Lee','Ha Noi',3,1,0126521478,'dattranvan22@gmail.com','CLlee','gnzLDuqKcGxMNKFokfhOew==','CL')
-INSERT INTO Account VALUES('David','King','Hai Phong',3,2,0136521478,'dattranvan22@gmail.com','CMking','gnzLDuqKcGxMNKFokfhOew==','CM')
-INSERT INTO Account VALUES('Brad','Feld','Ha Noi',3,3,0126521478,'dattranvan22@gmail.com','PVCfeld','gnzLDuqKcGxMNKFokfhOew==','PVC')
-INSERT INTO Account VALUES('Fred','Wilson','Hai Phong',3,4,0136521478,'dattranvan22@gmail.com','DTLwilson','gnzLDuqKcGxMNKFokfhOew==','DTL')
-INSERT INTO Account VALUES('Marissa','Mayer','Ha Noi',3,5,0126521478,'dattranvan22@gmail.com','ADMmayer','gnzLDuqKcGxMNKFokfhOew==','ADM')
-INSERT INTO Account VALUES('Meg','Jobs','Hai Phong',3,6,0136521478,'dattranvan22@gmail.com','GUjobs','gnzLDuqKcGxMNKFokfhOew==','GU')
+INSERT INTO Account VALUES('Paul','Miller','Hai Phong',2,2,0136521478,'dattranvan23@gmail.com','CMmiller','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Ailen','Lee','Ha Noi',3,1,0126521478,'dattranvan24@gmail.com','CLlee','gnzLDuqKcGxMNKFokfhOew==','CL')
+INSERT INTO Account VALUES('David','King','Hai Phong',3,2,0136521478,'dattranvan25@gmail.com','CMking','gnzLDuqKcGxMNKFokfhOew==','CM')
+INSERT INTO Account VALUES('Brad','Feld','Ha Noi',3,3,0126521478,'dattranvan26@gmail.com','pvctest','gnzLDuqKcGxMNKFokfhOew==','PVC')
+INSERT INTO Account VALUES('Fred','Wilson','Hai Phong',3,4,0136521478,'dattranvan27@gmail.com','DTLwilson','gnzLDuqKcGxMNKFokfhOew==','DTL')
+INSERT INTO Account VALUES('Marissa','Mayer','Ha Noi',3,5,0126521478,'dattranvan28@gmail.com','admin','gnzLDuqKcGxMNKFokfhOew==','ADM')
+INSERT INTO Account VALUES('Meg','Jobs','Hai Phong',3,6,0136521478,'dattranvan29@gmail.com','guest','gnzLDuqKcGxMNKFokfhOew==','GU')
 
 
 INSERT INTO CourseWork VALUES('C12395',1,'Lee','Wilson',GETDATE(),2015,1,41,14,'hours',1)
@@ -259,3 +259,5 @@ ON o.courseId = c.courseId
 INNER JOIN Department d
 ON c.departmentId = d.departmentId
 WHERE r.CMRId = 1
+
+select s.*,e.title from CourseWork s inner join Course e on e.courseId = s.courseId and departmentId=1

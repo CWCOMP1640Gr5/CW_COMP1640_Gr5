@@ -37,7 +37,7 @@
                         <div class="col-sm-12">
                             <div class="pull-left">
                                 <div class="input-group pull-right">              
-                                    <input type="text" class="form-control" placeholder="Search course here">
+                                    <input type="text" class="form-control" placeholder="Search for.....">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                                 </span>
@@ -52,7 +52,7 @@
                                 <ul class="list-unstyled top-links">
                                     
                                     <c:if test="${not empty sessionScope.user}">
-                                        <li><h4 style="color: red"> Hello, ${sessionScope.user}</h4></li>
+                                        <li><h4 style="color: #ffffff"> Hello, ${sessionScope.user}</h4></li>
                                         <li><h4><a href="${sessionScope.linkpages}">Control Pages</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="LogoutProcess">Sign out</a></h4></li>
@@ -71,22 +71,7 @@
 
             
 
-            <div class="main-nav">
-                <div class="container">
-                    <div class="row" style="text-align:center">
-                        <ul class="nav nav-pills">
-                            <li class="active">
-                                <a href="LoadHome"><i class="glyphicon glyphicon-home"></i> Home</a>
-                            </li>
-                            <li><a href="ListPrograming">Programing</a></li>
-                            <li><a href="ListAllAppCMR">News</a></li>
-                            <li><a href="aboutUs.jsp">About Us</a></li>
-                            <li><a href="ListReport">Report</a></li>
-                            <li><a href="feedBack.jsp">Feed Back</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!--end .main-nav-->
+            
         </header>
 
 

@@ -129,8 +129,8 @@
                                             <a href="LoadHomeAdmin">Home</a>
                                         </td>
                                         <td>
-                                            <input type="submit" value="Insert"/>
-                                            <input type="reset" value="Reset"/>
+                                            <button type="submit" class="btn btn-default navbar-btn">Add New</button>
+                                            <button type="reset" class="btn btn-default navbar-btn">Reset</button>
                                         </td>
                                     </tr>
                                 </table>

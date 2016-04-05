@@ -99,7 +99,7 @@
                             <li class="list-group-item"><p><b>Program</b>: ${requestScope.departmentName.departmentName}</p></li>
                             <li class="list-group-item"><p><b>Position</b>: ${requestScope.Position}</p></li>
                             <li class="list-group-item"><p><b>Phone</b>: ${requestScope.Account.phone}</p></li>
-                            <li class="list-group-item"><p><b>UserName</b>: ${requestScope.Account.userName}</p></li>
+                            <li class="list-group-item"><p><b>Email</b>: ${requestScope.Account.email}</p></li>
                             <li class="list-group-item"><a href="LoadHomeAdmin">BACK</a></li>
                         </ul>
                     </div>

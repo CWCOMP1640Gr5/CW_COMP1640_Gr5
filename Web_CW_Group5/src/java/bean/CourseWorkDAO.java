@@ -247,7 +247,7 @@ public class CourseWorkDAO implements Serializable {
         con = dbconnect.DBConnect.getConnection();
 
         try {
-            pstm = con.prepareStatement("select * from CourseWork where departmentId=?");
+            pstm = con.prepareStatement("select s.*,e.title from CourseWork s inner join Course e on e.courseId = s.courseId and departmentId=?");
             pstm.setInt(1, departmentId);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -265,7 +265,8 @@ public class CourseWorkDAO implements Serializable {
                 cou.setCourserUnits(rs.getInt(10));
                 cou.setCostUnit(rs.getString(11));
                 cou.setIshadCMR(rs.getBoolean(12));
-
+                cou.setTitle(rs.getString(13));
+                
                 list.add(cou);
             }
 

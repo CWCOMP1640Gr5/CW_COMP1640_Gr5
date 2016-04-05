@@ -95,9 +95,9 @@
                     <div class="table-responsive">
 
                         <form action="UpdateAccount">
-                            <table border="1">
+                            <table class="table" border="1">
                                 <tr>
-                                    <td><span class="input-group-addon" id="basic-addon1">ID</span></td>
+                                    <td style="width: 15%"><span class="input-group-addon" id="basic-addon1">ID</span></td>
                                     <td>
                                         <input type="text" name="txtAccountId" class="form-control" aria-describedby="basic-addon1" value="${requestScope.Account.accountId}" readonly="true">
                                     </td>
@@ -180,8 +180,9 @@
                                 <tr>
                                     <td></td>
                                     <td >
-                                        <input type="submit" value="Update"/>
-                                        <input type="reset" value="Reset"/>
+                                        <button type="submit" class="btn btn-default navbar-btn">Update</button>
+                                        <button type="reset" class="btn btn-default navbar-btn">Reset</button>
+                                        
                                     </td>
                                 </tr>
                             </table>

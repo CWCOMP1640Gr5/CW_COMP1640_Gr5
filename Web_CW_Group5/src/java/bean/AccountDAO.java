@@ -38,6 +38,7 @@ public class AccountDAO implements Serializable{
     private int departmentId;
     private int staffId;
     private int phone;
+    private String email;
     private String userName;
     private String password;
     private String permission;
@@ -45,7 +46,7 @@ public class AccountDAO implements Serializable{
     public AccountDAO() {
     }
 
-    public AccountDAO(int accountId, String firtsName, String lastName, String address, int departmentId, int staffId, int phone, String userName, String password, String permission) {
+    public AccountDAO(int accountId, String firtsName, String lastName, String address, int departmentId, int staffId, int phone, String email, String userName, String password, String permission) {
         this.accountId = accountId;
         this.firtsName = firtsName;
         this.lastName = lastName;
@@ -53,6 +54,7 @@ public class AccountDAO implements Serializable{
         this.departmentId = departmentId;
         this.staffId = staffId;
         this.phone = phone;
+        this.email = email;
         this.userName = userName;
         this.password = password;
         this.permission = permission;
@@ -114,6 +116,14 @@ public class AccountDAO implements Serializable{
         this.phone = phone;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -137,6 +147,9 @@ public class AccountDAO implements Serializable{
     public void setPermission(String permission) {
         this.permission = permission;
     }
+
+    
+    
     
     public List<AccountDAO> getAllAccount()
     {
@@ -160,9 +173,10 @@ public class AccountDAO implements Serializable{
                 acc.setDepartmentId(rs.getInt(5));
                 acc.setStaffId(rs.getInt(6));
                 acc.setPhone(rs.getInt(7));
-                acc.setUserName(rs.getString(8));
-                acc.setPassword(rs.getString(9));
-                acc.setPermission(rs.getString(10));
+                acc.setEmail(rs.getString(8));
+                acc.setUserName(rs.getString(9));
+                acc.setPassword(rs.getString(10));
+                acc.setPermission(rs.getString(11));
     
                 list.add(acc);
             }
@@ -201,9 +215,10 @@ public class AccountDAO implements Serializable{
                 acc.setDepartmentId(rs.getInt(5));
                 acc.setStaffId(rs.getInt(6));
                 acc.setPhone(rs.getInt(7));
-                acc.setUserName(rs.getString(8));
-                acc.setPassword(rs.getString(9));
-                acc.setPermission(rs.getString(10));
+                acc.setEmail(rs.getString(8));
+                acc.setUserName(rs.getString(9));
+                acc.setPassword(rs.getString(10));
+                acc.setPermission(rs.getString(11));
             }
             
             
@@ -302,7 +317,7 @@ public class AccountDAO implements Serializable{
         
     }
       
-      public boolean addAccount(String firstName,String lastName,String address ,int departmentId,int staffId,int phone,String userName,String password,String permission)
+      public boolean addAccount(String firstName,String lastName,String address ,int departmentId,int staffId,int phone, String email ,String userName,String password,String permission)
     {
         Connection con;
         PreparedStatement pstm;
@@ -310,7 +325,7 @@ public class AccountDAO implements Serializable{
         
         try
         {
-            pstm =con.prepareStatement("insert into Account(firtsName,lastName,address,departmentId,staffId,phone,userName,password,permission)"+" values (?,?,?,?,?,?,?,?,?)");
+            pstm =con.prepareStatement("insert into Account(firtsName,lastName,address,departmentId,staffId,phone,email,userName,password,permission)"+" values (?,?,?,?,?,?,?,?,?,?)");
                        
             int result = pstm.executeUpdate();
             pstm.setString(2, firstName);
@@ -319,9 +334,10 @@ public class AccountDAO implements Serializable{
             pstm.setInt(5, departmentId);
             pstm.setInt(6, staffId);
             pstm.setInt(7, phone);
-            pstm.setString(8, userName);
-            pstm.setString(9, password);
-            pstm.setString(10, permission);
+            pstm.setString(8, email);
+            pstm.setString(9, userName);
+            pstm.setString(10, password);
+            pstm.setString(11, permission);
             
             if(result >0)
             {
@@ -384,9 +400,10 @@ public class AccountDAO implements Serializable{
                 acc.setDepartmentId(rs.getInt(5));
                 acc.setStaffId(rs.getInt(6));
                 acc.setPhone(rs.getInt(7));
-                acc.setUserName(rs.getString(8));
-                acc.setPassword(rs.getString(9));
-                acc.setPermission(rs.getString(10));
+                acc.setEmail(rs.getString(8));
+                acc.setUserName(rs.getString(9));
+                acc.setPassword(rs.getString(10));
+                acc.setPermission(rs.getString(11));
     
                 list.add(acc);
             }
@@ -426,9 +443,10 @@ public class AccountDAO implements Serializable{
                 acc.setDepartmentId(rs.getInt(5));
                 acc.setStaffId(rs.getInt(6));
                 acc.setPhone(rs.getInt(7));
-                acc.setUserName(rs.getString(8));
-                acc.setPassword(rs.getString(9));
-                acc.setPermission(rs.getString(10));
+                acc.setEmail(rs.getString(8));
+                acc.setUserName(rs.getString(9));
+                acc.setPassword(rs.getString(10));
+                acc.setPermission(rs.getString(11));
     
                 list.add(acc);
             }
@@ -496,9 +514,10 @@ public class AccountDAO implements Serializable{
                 acc.setDepartmentId(rs.getInt(5));
                 acc.setStaffId(rs.getInt(6));
                 acc.setPhone(rs.getInt(7));
-                acc.setUserName(rs.getString(8));
-                acc.setPassword(rs.getString(9));
-                acc.setPermission(rs.getString(10));
+                acc.setEmail(rs.getString(8));
+                acc.setUserName(rs.getString(9));
+                acc.setPassword(rs.getString(10));
+                acc.setPermission(rs.getString(11));
             }
             
             

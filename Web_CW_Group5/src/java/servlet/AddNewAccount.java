@@ -44,7 +44,7 @@ public class AddNewAccount extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String firstName, lastName, address, userName, password, permission;
+        String firstName, lastName, address,email, userName, password, permission;
 
         firstName = request.getParameter("txtFirstName");
         lastName = request.getParameter("txtLastName");
@@ -52,6 +52,7 @@ public class AddNewAccount extends HttpServlet {
         int department = Integer.parseInt(request.getParameter("sldepartment"));
         int staff = Integer.parseInt(request.getParameter("slstaff"));
         int phone = Integer.parseInt(request.getParameter("txtPhone"));
+        email = request.getParameter("txtEmail");
         userName = address = request.getParameter("txtuserName");
         password = request.getParameter("txtPass");
         permission = request.getParameter("permission");
@@ -75,7 +76,7 @@ public class AddNewAccount extends HttpServlet {
         con = dbconnect.DBConnect.getConnection();
 
         try {
-            pstm = con.prepareStatement("insert into Account(firtsName,lastName,address,departmentId,staffId,phone,userName,password,permission)" + " values (?,?,?,?,?,?,?,?,?)");
+            pstm = con.prepareStatement("insert into Account(firtsName,lastName,address,departmentId,staffId,phone,email,userName,password,permission)" + " values (?,?,?,?,?,?,?,?,?,?)");
 
             pstm.setString(1, firstName);
             pstm.setString(2, lastName);
@@ -83,9 +84,10 @@ public class AddNewAccount extends HttpServlet {
             pstm.setInt(4, department);
             pstm.setInt(5, staff);
             pstm.setInt(6, phone);
-            pstm.setString(7, userName);
-            pstm.setString(8, encryptPass);
-            pstm.setString(9, permission);
+            pstm.setString(7, email);
+            pstm.setString(8, userName);
+            pstm.setString(9, encryptPass);
+            pstm.setString(10, permission);
 
             int result = pstm.executeUpdate();
             if (result > 0) {

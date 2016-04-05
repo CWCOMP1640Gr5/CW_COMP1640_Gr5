@@ -155,14 +155,14 @@
                                     <tr>
                                         <td><b>Start Date:</b></td>
                                         <td>
-                                            <input placeholder="yyyy-MM-dd" required="required"t type="text" name="createDate" value="${param.createDate}"/>
+                                            <input placeholder="yyyy-MM-dd" required="required" type="text" name="createDate" value="${param.createDate}"/>
                                             <span style="color: red">${requestScope.dateErr}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><b>Year Making:</b></td>
                                         <td>
-                                            <input type="number" name="yearmaking" value="${param.yearmaking}"/>
+                                            <input type="number" required="required" name="yearmaking" value="${param.yearmaking}"/>
                                             <span style="color: red">${requestScope.yearErr}</span>
                                         </td>
                                     </tr>

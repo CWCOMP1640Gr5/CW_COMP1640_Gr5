@@ -47,7 +47,7 @@ public class AddNewDepartment extends HttpServlet {
          boolean bl = true;
          boolean result = new Department().checkProDuplicate(departmentName);
          if (departmentName.length() == 0) {
-            request.setAttribute("deErr", "Programing id must be inputed");
+            request.setAttribute("deErr", "Programing Name must be inputed");
             bl = false;
         }
          if(result)

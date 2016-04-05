@@ -1,11 +1,11 @@
 <%-- 
-    Document   : login
-    Created on : Mar 1, 2016, 10:06:18 AM
+    Document   : feedback
+    Created on : Apr 3, 2016, 12:24:38 AM
     Author     : Fpt
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
         <link rel="shortcut icon" href="ico/favicon.png">
         <title>COURSE MONITOR GROUP 5</title>
         <!-- Bootstrap core CSS -->
@@ -69,7 +68,9 @@
                 </div>
             </div><!--end .top-bar-->
 
-           <div class="main-nav">
+
+
+            <div class="main-nav">
                 <div class="container">
                     <div class="row" style="text-align:center">
                         <ul class="nav nav-pills">
@@ -80,7 +81,7 @@
                             <li><a href="LoadHome">News</a></li>
                             <li><a href="aboutUs.jsp">About Us</a></li>
                             <li><a href="ListReport">Report</a></li>
-                            <li><a href="feedBack.jsp">Feed Back</a></li>
+                            <li><a href="feedback.jsp">Feed Back</a></li>
                         </ul>
                     </div>
                 </div>
@@ -90,77 +91,73 @@
 
 
         <section class="content">
-            <div class="container">                
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Login</h3>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
-                                <div class="login-panel panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Please Sign In</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <c:if test="${not empty cookie.user.value}">
-
-                                            <%
-                                                //set user vao bien session khi cookie khong null
-
-                                                Cookie[] cookies = request.getCookies();
-                                                if (cookies != null) {
-                                                    for (int i = 0; i < cookies.length; i++) {
-                                                        System.out.println("cookie name:" + cookies[i].getName() + ", value:" + cookies[i].getValue());
-                                                        if (cookies[i].getName().equals("user")) {
-                                                            //co cookie:
-                                                            request.getSession().setAttribute("user", cookies[i].getValue());
-                                                        }
-                                                        if (cookies[i].getName().equals("linkpages")) {
-                                                            //co cookie:
-                                                            request.getSession().setAttribute("linkpages", cookies[i].getValue());
-                                                        }
-
-                                                    }
-                                                }
-                                            %>
-                                            <jsp:forward page="index.jsp"/>
-                                        </c:if>
-                                        <h3 style="color: red">${requestScope.loginErr}</h3>
-                                        <form role="form" action="LoginProcess" method="Post">
-                                            <fieldset>
-                                                <div class="form-group">
-                                                    <input class="form-control" value="${cookie.user.value}" name="txtuserName" type="text" autofocus required="required">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input class="form-control" value="${cookie.pass.value}" name="txtpassword" type="password" required="required">
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                                    </label>
-                                                </div>
-                                                <!-- Change this to a button or input when using this as a form -->
-                                                <input type="submit" class="btn btn-lg btn-success btn-block" value="LOGIN"/>
-                                            </fieldset>
-                                        </form>
+            <div class="container">
 
 
 
-                                    </div>
-                                </div>
-                            </div>
+                <div class="new-lists">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="centerBox" style="background-color:red; text-align:center; font-family: fantasy">Give us your feel!</h3>
                         </div>
                     </div>
-                </div>
 
+                    <div class="row">
+                        <h3 style="color: red">${requestScope.insertStatus}</h3>
+                        <form action="AddFeedBack">
+                            <table class="table" border="1">
+                                <tr>
+                                    <td style="width: 14%"><b>Your Name:</b></td>
+                                    <td>
+                                        <input required="required" placeholder="Your Name" type="text" name="txtUserName" value="${param.txtUserName}"/>
+
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td style="width: 14%"><b>Your Email</b></td>
+                                    <td>
+                                        <input required="required" placeholder="Exam@gmail.com" type="email" name="txtEmail" value="${param.txtEmail}"/>
+
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td><b>Title:</b></td>
+                                    <td>
+                                        <input placeholder="Title" type="text" name="txtTitle" value="${param.txtTitle}"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Message:</b></td>
+                                    <td>
+                                        <textarea name="txtMessage" placeholder="Your message.." required="required" style="height: 150px;width: 90%">${param.txtMessage}</textarea>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a href="LoadHome"> Back Home</a>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-default navbar-btn">Send</button>
+                                        <button type="reset" class="btn btn-default navbar-btn">Reset</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+
+
+
+                    </div>
+                </div><!--end .new-lists-->
+                <br />
 
                 <div class="about">
                     <div class="row">
                         <div class="col-sm-3 about-w">
                             <div class="form-about">
                                 <h3>About Website</h3>
-                                <a href="feedBack.html" class="btn btn-default">Contact us</a>
+                                <a href="feedBack.jsp" class="btn btn-default">Contact us</a>
                             </div>
                         </div>
                         <div class="col-sm-9 shop-about">
@@ -285,4 +282,3 @@
         <script src="js/main.js"></script>
     </body>
 </html>
-

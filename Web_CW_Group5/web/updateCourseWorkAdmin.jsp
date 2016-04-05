@@ -102,7 +102,7 @@
                             <h3 style="color: red">${requestScope.insertStatus}</h3>
 
                             <form action="UpdateCourseWork">
-                                <table border="1">
+                                <table class="table" border="1">
                                     <tr>
                                         <td>ID</td>
                                         <td>
@@ -202,8 +202,8 @@
                                             <a href="LoadHomeAdmin">Home</a>
                                         </td>
                                         <td>
-                                            <input type="submit" value="Insert"/>
-                                            <input type="reset" value="Reset"/>
+                                            <button type="submit" class="btn btn-default navbar-btn">Update</button>
+                                            <button type="reset" class="btn btn-default navbar-btn">Reset</button>
                                         </td>
                                     </tr>
                                 </table>

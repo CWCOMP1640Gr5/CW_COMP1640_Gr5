@@ -37,7 +37,7 @@
                         <div class="col-sm-12">
                             <div class="pull-left">
                                 <div class="input-group pull-right">              
-                                    <input type="text" class="form-control" placeholder="Search course here">
+                                    <input type="text" class="form-control" placeholder="Search for.....">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                                 </span>
@@ -76,10 +76,10 @@
                     <div class="row" style="text-align:center">
                         <ul class="nav nav-pills">
                             <li class="active">
-                                <a href="LoadHome"><i class="glyphicon glyphicon-home"></i> Home</a>
+                                <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
                             <li><a href="ListPrograming">Programing</a></li>
-                            <li><a href="ListAllAppCMR">News</a></li>
+                            <li><a href="LoadHome">News</a></li>
                             <li><a href="aboutUs.jsp">About Us</a></li>
                             <li><a href="ListReport">Report</a></li>
                             <li><a href="feedBack.jsp">Feed Back</a></li>

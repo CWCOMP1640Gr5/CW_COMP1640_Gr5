@@ -157,6 +157,13 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td style="width: 15%"><b><span class="input-group-addon" id="basic-addon1" >Email</span></b></td>
+                                    <td>
+                                        <input  required="required" type="email" name="txtEmail" class="form-control" aria-describedby="basic-addon1">
+
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td><b><span class="input-group-addon" id="basic-addon1">UserName</span></b></td>
                                     <td>
                                         <input required="required" type="text" name="txtuserName" class="form-control" aria-describedby="basic-addon1">
