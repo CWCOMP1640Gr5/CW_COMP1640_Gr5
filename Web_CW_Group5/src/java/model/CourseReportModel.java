@@ -15,13 +15,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  *
@@ -426,5 +432,236 @@ public class CourseReportModel {
         }
         return c;
     }
+    
+    public String getEmailbyLName(String Lname){
+        String Email = "";
+        conn = new DBConnect();
+        con = conn.getConnection();
+        try {
+
+            PreparedStatement ps = con.prepareStatement("SELECT email From Account WHERE lastName = ? ");
+            ps.setString(1, Lname);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+              Email =  rs.getString("email");
+            }
+            rs.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Email;
+    }
+    
+    public boolean generateAndSendEmai(CourseMonitorReport c, StatisticalData s, GradeDistributionData g, String email) throws AddressException, MessagingException {
+        boolean status = false;
+        Properties mailServerProperties;
+        Session getMailSession;
+        MimeMessage generateMailMessage;
+        c = new CourseMonitorReport();
+        s = new StatisticalData();
+        g = new GradeDistributionData();
+        // Step1
+        System.out.println("\n 1st ===> setup Mail Server Properties..");
+        mailServerProperties = System.getProperties();
+        mailServerProperties.put("mail.smtp.port", "587");
+        mailServerProperties.put("mail.smtp.auth", "true");
+        mailServerProperties.put("mail.smtp.starttls.enable", "true");
+        System.out.println("Mail Server Properties have been setup successfully..");
+
+        // Step2
+        System.out.println("\n\n 2nd ===> get Mail Session..");
+        getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+        generateMailMessage = new MimeMessage(getMailSession);
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+
+        generateMailMessage.setSubject("NEW COURSEWORK ON CMS");
+        String emailBody = "<p>Hello,</p>\n" +
+"<p>This is automatic mailer from fpt education. You have 1 course monitor report from "+c.getCourseLeader()+". Click <a href=\"http://google.com\">here</a> to login CMS.\n" +
+"</p>\n" +
+"<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n" +
+"  <tr>\n" +
+"    <td width=\"568\" colspan=\"2\" valign=\"top\"><p align=\"center\"><strong>COURSE MONITORING REPORT</strong></p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"130\" valign=\"top\"><p>Academic Session</p></td>\n" +
+"    <td width=\"438\" valign=\"top\">"+c.getCMRId()+"</td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"130\" valign=\"top\"><p>Course Code + title:</p></td>\n" +
+"    <td width=\"438\" valign=\"top\"><p>"+c.getTitle()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"130\" valign=\"top\"><p>Course Leader:</p></td>\n" +
+"    <td width=\"438\" valign=\"top\">"+c.getCourseLeader()+"</td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"130\" valign=\"top\"><p>Student count</p></td>\n" +
+"    <td width=\"438\" valign=\"top\">"+c.getStudentCount()+"</td>\n" +
+"  </tr>\n" +
+"</table>\n" +
+"<br/>\n" +
+"<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n" +
+"  <tr>\n" +
+"    <td width=\"568\" colspan=\"7\" valign=\"top\"><p><strong>Statistical Data</strong></p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"81\" valign=\"top\"><p>&nbsp;</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>CW1</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>CW2</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>CW3</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>CW4</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>EXAM</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>OVERALL</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"81\" valign=\"top\"><p>Mean</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw1r1()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw2r1()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw3r1()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw4r1()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getOver1r1()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getExamr1()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"81\" valign=\"top\"><p>Median</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw1r2()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw2r2()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw3r2()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw4r2()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getOverr2()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getExam1r2()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"81\" valign=\"top\"><p>Standard   Deviation</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw1r3()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw2r3()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw3r3()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getCw4r3()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getOverr3()+"</p></td>\n" +
+"    <td width=\"81\" valign=\"top\"><p>"+s.getExam1r3()+"</p></td>\n" +
+"  </tr>\n" +
+"</table>\n" +
+"<br/>\n" +
+"<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n" +
+"  <tr>\n" +
+"    <td width=\"568\" colspan=\"11\" valign=\"top\"><p><strong>Grade Distribution Data</strong></p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>&nbsp;</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">0 – 9</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">10 -19</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">20 -29</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">30 -39</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">40 -  49</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">50 - 59</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">60 - 69</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">70 - 79</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">80 - 89</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">90+</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>CW1</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR1c10()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>CW2</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR2c10()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>CW3</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR3c10()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>CW4</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR4c10()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>EX</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR5c10()+"</p></td>\n" +
+"  </tr>\n" +
+"  <tr>\n" +
+"    <td width=\"52\" valign=\"top\"><p>OVERALL</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c1()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c2()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c3()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c4()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c5()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c6()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c7()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c8()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c9()+"</p></td>\n" +
+"    <td width=\"52\" valign=\"top\"><p align=\"center\">"+g.getR6c10()+"</p></td>\n" +
+"  </tr>\n" +
+"</table>\n" +
+"\n" +
+"";
+        generateMailMessage.setContent(emailBody, "text/html");
+        System.out.println("Mail Session has been created successfully..");
+        generateMailMessage.setFrom(new InternetAddress("cms@fpt.edu.vn"));
+        // Step3
+        System.out.println("\n\n 3rd ===> Get Session and Send mail");
+        Transport transport = getMailSession.getTransport("smtp");
+
+        // Enter your correct gmail UserID and Password
+        // if you have 2FA enabled then provide App Specific Password
+        
+        try {
+          transport.connect("smtp.gmail.com", "dattvgc00735@fpt.edu.vn", "trandattb1");
+          transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
+        transport.close();   
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return status;
+    }
+    
+    
 
 }

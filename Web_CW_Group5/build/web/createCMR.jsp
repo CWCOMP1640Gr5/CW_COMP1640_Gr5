@@ -191,30 +191,30 @@
                                     </tr>
                                     <tr>
                                         <td>Mean</td>
-                                        <td><input type="number" name="cw1r1" id="r1" class="r1" /></td>
-                                        <td><input type="number" name="cw2r1" id="r1" class="r1" /></td>
-                                        <td><input type="number" name="cw3r1" id="r1" class="r1" /></td>
-                                        <td><input type="number" name="cw4r1" id="r1" class="r1" /></td>
-                                        <td><input type="number" name="examr1" id="r1" class="r1" /></td>
-                                        <td><input type="number" name="overr1" id="over1" readonly class="over1" /></td>
+                                        <td><input type="number" value="0" name="cw1r1" id="r1" class="r1" /></td>
+                                        <td><input type="number" value="0" name="cw2r1" id="r1" class="r1" /></td>
+                                        <td><input type="number" value="0" name="cw3r1" id="r1" class="r1" /></td>
+                                        <td><input type="number" value="0" name="cw4r1" id="r1" class="r1" /></td>
+                                        <td><input type="number" value="0" name="examr1" id="r1" class="r1" /></td>
+                                        <td><input type="number" value="0" name="overr1" id="over1" readonly class="over1" /></td>
                                     </tr>
                                     <tr>
                                         <td>Median</td>
-                                        <td><input type="number" name="cw1r2" class="r2" /></td>
-                                        <td><input type="number" name="cw2r2" class="r2" /></td>
-                                        <td><input type="number" name="cw3r2" class="r2" /></td>
-                                        <td><input type="number" name="cw4r2" class="r2" /></td>
-                                        <td><input type="number" name="examr2" class="r2" /></td>
-                                        <td><input type="number" name="overr2" readonly class="over2" /></td>
+                                        <td><input type="number" value="0" name="cw1r2" class="r2" /></td>
+                                        <td><input type="number" value="0" name="cw2r2" class="r2" /></td>
+                                        <td><input type="number" value="0" name="cw3r2" class="r2" /></td>
+                                        <td><input type="number" value="0" name="cw4r2" class="r2" /></td>
+                                        <td><input type="number" value="0" name="examr2" class="r2" /></td>
+                                        <td><input type="number" value="0" name="overr2" readonly class="over2" /></td>
                                     </tr>
                                     <tr>
                                         <td>Standard Deviation</td>
-                                        <td><input type="number" name="cw1r3" class="r3" /></td>
-                                        <td><input type="number" name="cw2r3" class="r3" /></td>
-                                        <td><input type="number" name="cw3r3" class="r3" /></td>
-                                        <td><input type="number" name="cw4r3" class="r3" /></td>
-                                        <td><input type="number" name="examr3" class="r3" /></td>
-                                        <td><input type="number" name="overr3" readonly class="over3" /></td>
+                                        <td><input type="number" value="0" name="cw1r3" class="r3" /></td>
+                                        <td><input type="number" value="0" name="cw2r3" class="r3" /></td>
+                                        <td><input type="number" value="0" name="cw3r3" class="r3" /></td>
+                                        <td><input type="number" value="0" name="cw4r3" class="r3" /></td>
+                                        <td><input type="number" value="0" name="examr3" class="r3" /></td>
+                                        <td><input type="number" value="0" name="overr3" readonly class="over3" /></td>
                                     </tr>
                                 </table>
                                 <br/>
@@ -238,86 +238,86 @@
                                     </tr>
                                     <tr>
                                         <td>CW1</td>
-                                        <td><input type="number" name="r1c1" class="c1" /></td>
-                                        <td><input type="number" name="r1c2" class="c2" /></td>
-                                        <td><input type="number" name="r1c3" class="c3" /></td>
-                                        <td><input type="number" name="r1c4" class="c4" /></td>
-                                        <td><input type="number" name="r1c5" class="c5" /></td>
-                                        <td><input type="number" name="r1c6" class="c6" /></td>
-                                        <td><input type="number" name="r1c7" class="c7" /></td>
-                                        <td><input type="number" name="r1c8" class="c8" /></td>
-                                        <td><input type="number" name="r1c9" class="c9" /></td>
-                                        <td><input type="number" name="r1c10" class="c10" /></td>
+                                        <td><input type="number" value="0" name="r1c1" class="c1" /></td>
+                                        <td><input type="number" value="0" name="r1c2" class="c2" /></td>
+                                        <td><input type="number" value="0" name="r1c3" class="c3" /></td>
+                                        <td><input type="number" value="0" name="r1c4" class="c4" /></td>
+                                        <td><input type="number" value="0" name="r1c5" class="c5" /></td>
+                                        <td><input type="number" value="0" name="r1c6" class="c6" /></td>
+                                        <td><input type="number" value="0" name="r1c7" class="c7" /></td>
+                                        <td><input type="number" value="0" name="r1c8" class="c8" /></td>
+                                        <td><input type="number" value="0" name="r1c9" class="c9" /></td>
+                                        <td><input type="number" value="0" name="r1c10" class="c10" /></td>
                                     </tr>
 
                                     <tr>
                                         <td>CW2</td>
-                                        <td><input type="number" name="r2c1" class="c1" /></td>
-                                        <td><input type="number" name="r2c2" class="c2" /></td>
-                                        <td><input type="number" name="r2c3" class="c3" /></td>
-                                        <td><input type="number" name="r2c4" class="c4" /></td>
-                                        <td><input type="number" name="r2c5" class="c5" /></td>
-                                        <td><input type="number" name="r2c6" class="c6" /></td>
-                                        <td><input type="number" name="r2c7" class="c7" /></td>
-                                        <td><input type="number" name="r2c8" class="c8" /></td>
-                                        <td><input type="number" name="r2c9" class="c9" /></td>
-                                        <td><input type="number" name="r2c10" class="c10" /></td>
+                                        <td><input type="number" value="0" name="r2c1" class="c1" /></td>
+                                        <td><input type="number" value="0" name="r2c2" class="c2" /></td>
+                                        <td><input type="number" value="0" name="r2c3" class="c3" /></td>
+                                        <td><input type="number" value="0" name="r2c4" class="c4" /></td>
+                                        <td><input type="number" value="0" name="r2c5" class="c5" /></td>
+                                        <td><input type="number" value="0" name="r2c6" class="c6" /></td>
+                                        <td><input type="number" value="0" name="r2c7" class="c7" /></td>
+                                        <td><input type="number" value="0" name="r2c8" class="c8" /></td>
+                                        <td><input type="number" value="0" name="r2c9" class="c9" /></td>
+                                        <td><input type="number" value="0" name="r2c10" class="c10" /></td>
                                     </tr>
 
                                     <tr>
                                         <td>CW3</td>
-                                        <td><input type="number" name="r3c1" class="c1" /></td>
-                                        <td><input type="number" name="r3c2" class="c2" /></td>
-                                        <td><input type="number" name="r3c3" class="c3" /></td>
-                                        <td><input type="number" name="r3c4" class="c4" /></td>
-                                        <td><input type="number" name="r3c5" class="c5" /></td>
-                                        <td><input type="number" name="r3c6" class="c6" /></td>
-                                        <td><input type="number" name="r3c7" class="c7" /></td>
-                                        <td><input type="number" name="r3c8" class="c8" /></td>
-                                        <td><input type="number" name="r3c9" class="c9" /></td>
-                                        <td><input type="number" name="r3c10" class="c10" /></td>
+                                        <td><input type="number" value="0" name="r3c1" class="c1" /></td>
+                                        <td><input type="number" value="0" name="r3c2" class="c2" /></td>
+                                        <td><input type="number" value="0" name="r3c3" class="c3" /></td>
+                                        <td><input type="number" value="0" name="r3c4" class="c4" /></td>
+                                        <td><input type="number" value="0" name="r3c5" class="c5" /></td>
+                                        <td><input type="number" value="0" name="r3c6" class="c6" /></td>
+                                        <td><input type="number" value="0" name="r3c7" class="c7" /></td>
+                                        <td><input type="number" value="0" name="r3c8" class="c8" /></td>
+                                        <td><input type="number" value="0" name="r3c9" class="c9" /></td>
+                                        <td><input type="number" value="0" name="r3c10" class="c10" /></td>
                                     </tr>
 
                                     <tr>
                                         <td>CW4</td>
-                                        <td><input type="number" name="r4c1" class="c1" /></td>
-                                        <td><input type="number" name="r4c2" class="c2" /></td>
-                                        <td><input type="number" name="r4c3" class="c3" /></td>
-                                        <td><input type="number" name="r4c4" class="c4" /></td>
-                                        <td><input type="number" name="r4c5" class="c5" /></td>
-                                        <td><input type="number" name="r4c6" class="c6" /></td>
-                                        <td><input type="number" name="r4c7" class="c7" /></td>
-                                        <td><input type="number" name="r4c8" class="c8" /></td>
-                                        <td><input type="number" name="r4c9" class="c9" /></td>
-                                        <td><input type="number" name="r4c10" class="c10" /></td>
+                                        <td><input type="number" value="0" name="r4c1" class="c1" /></td>
+                                        <td><input type="number" value="0" name="r4c2" class="c2" /></td>
+                                        <td><input type="number" value="0" name="r4c3" class="c3" /></td>
+                                        <td><input type="number" value="0" name="r4c4" class="c4" /></td>
+                                        <td><input type="number" value="0" name="r4c5" class="c5" /></td>
+                                        <td><input type="number" value="0" name="r4c6" class="c6" /></td>
+                                        <td><input type="number" value="0" name="r4c7" class="c7" /></td>
+                                        <td><input type="number" value="0" name="r4c8" class="c8" /></td>
+                                        <td><input type="number" value="0" name="r4c9" class="c9" /></td>
+                                        <td><input type="number" value="0" name="r4c10" class="c10" /></td>
                                     </tr>
 
                                     <tr>
                                         <td>EX</td>
-                                        <td><input type="number" name="r5c1" class="c1" /></td>
-                                        <td><input type="number" name="r5c2" class="c2" /></td>
-                                        <td><input type="number" name="r5c3" class="c3" /></td>
-                                        <td><input type="number" name="r5c4" class="c4" /></td>
-                                        <td><input type="number" name="r5c5" class="c5" /></td>
-                                        <td><input type="number" name="r5c6" class="c6" /></td>
-                                        <td><input type="number" name="r5c7" class="c7" /></td>
-                                        <td><input type="number" name="r5c8" class="c8" /></td>
-                                        <td><input type="number" name="r5c9" class="c9" /></td>
-                                        <td><input type="number" name="r5c10" class="c10" /></td>
+                                        <td><input type="number" value="0" name="r5c1" class="c1" /></td>
+                                        <td><input type="number" value="0" name="r5c2" class="c2" /></td>
+                                        <td><input type="number" value="0" name="r5c3" class="c3" /></td>
+                                        <td><input type="number" value="0" name="r5c4" class="c4" /></td>
+                                        <td><input type="number" value="0" name="r5c5" class="c5" /></td>
+                                        <td><input type="number" value="0" name="r5c6" class="c6" /></td>
+                                        <td><input type="number" value="0" name="r5c7" class="c7" /></td>
+                                        <td><input type="number" value="0" name="r5c8" class="c8" /></td>
+                                        <td><input type="number" value="0" name="r5c9" class="c9" /></td>
+                                        <td><input type="number" value="0" name="r5c10" class="c10" /></td>
                                     </tr>
 
                                     <tr>
                                         <td>OVERALL</td>
-                                        <td><input type="number" readonly name="r6c1" class="gddov1" /></td>
-                                        <td><input type="number" readonly name="r6c2" class="gddov2" /></td>
-                                        <td><input type="number" readonly name="r6c3" class="gddov3" /></td>
-                                        <td><input type="number" readonly name="r6c4" class="gddov4" /></td>
-                                        <td><input type="number" readonly name="r6c5" class="gddov5" /></td>
-                                        <td><input type="number" readonly  name="r6c6" class="gddov6" /></td>
-                                        <td><input type="number" readonly name="r6c7" class="gddov7" /></td>
-                                        <td><input type="number" readonly name="r6c8" class="gddov8" /></td>
-                                        <td><input type="number" readonly name="r6c9" class="gddov9" /></td>
-                                        <td><input type="number" readonly name="r6c10" class="gddov10" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c1" class="gddov1" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c2" class="gddov2" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c3" class="gddov3" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c4" class="gddov4" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c5" class="gddov5" /></td>
+                                        <td><input type="number" value="0" readonly  name="r6c6" class="gddov6" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c7" class="gddov7" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c8" class="gddov8" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c9" class="gddov9" /></td>
+                                        <td><input type="number" value="0" readonly name="r6c10" class="gddov10" /></td>
                                     </tr>
                                 </table>
                                 <br/>
