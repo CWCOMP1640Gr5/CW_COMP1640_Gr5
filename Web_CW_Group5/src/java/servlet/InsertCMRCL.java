@@ -10,8 +10,12 @@ import entity.GradeDistributionData;
 import entity.StatisticalData;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -151,6 +155,16 @@ public class InsertCMRCL extends HttpServlet {
         gdd.setR6c8(Integer.parseInt(request.getParameter("r6c8")));
         gdd.setR6c9(Integer.parseInt(request.getParameter("r6c9")));
         gdd.setR6c10(Integer.parseInt(request.getParameter("r6c10")));
+        
+                Cookie[] cookies = request.getCookies();
+                String Lname = "";
+        if (cookies != null) {
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals("lastname")) {
+                 Lname =cookies[i].getValue();
+                }
+            }
+        }
 
         CourseReportModel crm = new CourseReportModel();
         int addCoursesReport = crm.addCoursesReport(Integer.parseInt(academicsession));
@@ -161,6 +175,16 @@ public class InsertCMRCL extends HttpServlet {
             gdd.setCMRId(addCoursesReport);
             boolean addGDD = crm.addGDD(addCoursesReport, gdd);
             System.out.println(addCoursesReport + ":" + addSD + ":" + addGDD);
+            String emailbyLName = crm.getEmailbyLName(Lname);
+            CourseMonitorReport cmrDetail = crm.getCMRDetail(addCoursesReport);
+            System.out.println("Email:"+emailbyLName);
+            System.out.println("CMR:"+cmrDetail.getTitle());
+            try {
+                boolean generateAndSendEmai = crm.generateAndSendEmai(cmrDetail, sd, gdd, emailbyLName);
+                System.out.println("Status: "+generateAndSendEmai);
+            } catch (MessagingException ex) {
+                ex.printStackTrace();
+            }
             request.getRequestDispatcher("getCMRCLServlet").forward(request, response);
         } else {
             request.getRequestDispatcher("createCMR.jsp").forward(request, response);
