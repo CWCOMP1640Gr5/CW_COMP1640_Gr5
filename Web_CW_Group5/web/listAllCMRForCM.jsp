@@ -101,7 +101,7 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">List All Of Course Monitor Report</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2;padding-top: 10px; text-align:center">List All Of Course Monitor Report</h3>
                         </div>
 
 

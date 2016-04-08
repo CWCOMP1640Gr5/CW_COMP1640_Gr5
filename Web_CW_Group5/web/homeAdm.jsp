@@ -30,7 +30,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only"></span>
                         <span class="icon-bar"></span>
@@ -90,41 +90,53 @@
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <c:if test="${not empty sessionScope.user}">
-                                        <h1 class="page-header" style="color: red">Hello, Admin</h1>
-                                    </c:if>
-                                    <c:if test="${empty sessionScope.user}">
-                                        <jsp:forward page="login.jsp"/>
-                                    </c:if>
-                   
+                        <h1 class="page-header" style="color: blue">Hello, Admin</h1>
+                    </c:if>
+                    <c:if test="${empty sessionScope.user}">
+                        <jsp:forward page="login.jsp"/>
+                    </c:if>
+
 
                     <div class="row placeholders">
                         <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-thumbnail" alt="Generic placeholder thumbnail">
                             <h4>
-                                <a href="ListCourseWorkAdmin">List Course Work</a>
+                                <a href="#">Course Work</a><br>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a href="ListCourseWorkAdmin" type="button" class="btn btn-default">List</a>
+                                    <a href="PreAddCourseWork" type="button" class="btn btn-default">Add</a>
+                                </div>
                             </h4>
-                            
+
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200"  class="img-thumbnail" alt="Generic placeholder thumbnail">
                             <h4>
-                                <a href="ListCourseAdmin">List Course</a>
+                                <a href="#"> Course</a><br>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a href="ListCourseAdmin" type="button" class="btn btn-default">List</a>
+                                    <a href="addNewCourse.jsp" type="button" class="btn btn-default">Add</a>
+                                </div>
                             </h4>
-                            
+
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-thumbnail" alt="Generic placeholder thumbnail">
                             <h4>
-                                <a href="ListDepartmentAdmin">List Department</a>
+                                <a href="#">Department</a><br>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a href="ListDepartmentAdmin" type="button" class="btn btn-default">List</a>
+                                    <a href="addNewDepartment.jsp" type="button" class="btn btn-default">Add</a>
+                                </div>
                             </h4>
-                            
+
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-thumbnail" alt="Generic placeholder thumbnail">
                             <h4>
                                 <a href="ListFeedBack">List FeedBack</a>
                             </h4>
-                            
+
                         </div>
                     </div>
 

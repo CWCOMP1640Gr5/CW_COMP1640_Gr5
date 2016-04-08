@@ -102,7 +102,7 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Welcome to Home Page of Director</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2;padding-top: 10px; text-align:center">Welcome to Home Page of Director</h3>
                             <p style="font-size: 18px;font-family: fantasy">
                                 You have : <span style="color: red"> ${requestScope.Count}</span>  Course Monitor Reports no comment! Click 
                                 <a href="CommentCMR">here</a> to comment for report now now!

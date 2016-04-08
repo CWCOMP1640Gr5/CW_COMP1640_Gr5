@@ -103,10 +103,10 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Welcome to Course Monitor</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2;padding-top: 10px; text-align:center">Welcome to Course Moderator</h3>
                             <p><a href="PreLoadHomeCM">Check</a></p>
                             <p style="font-size: 18px;font-family: fantasy">
-                                Hello Course Monitor, You have : <span style="color: red">${requestScope.Count}</span>  Course Monitor Report to approve! Click 
+                                Hello Course Moderator, You have : <span style="color: red">${requestScope.Count}</span>  Course Monitor Report to approve! Click 
                                 <a href="listCMRForCM">here</a> to approve now!
                             </p>
                             <br>

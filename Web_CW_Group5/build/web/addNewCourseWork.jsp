@@ -162,28 +162,28 @@
                                     <tr>
                                         <td><b>Year Making:</b></td>
                                         <td>
-                                            <input type="number" required="required" name="yearmaking" value="${param.yearmaking}"/>
+                                            <input type="number" placeholder="2016" required="required" name="yearmaking" value="${param.yearmaking}"/>
                                             <span style="color: red">${requestScope.yearErr}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><b>Semeter:</b></td>
                                         <td>
-                                            <input required="required" type="number" name="semester" value="${param.semester}"/>
+                                            <input required="required" placeholder="1" type="number" name="semester" value="${param.semester}"/>
                                             
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><b>Student Count:</b></td>
                                         <td>
-                                            <input required="required" type="number" name="studentCount" value="${param.studentCount}"/>
+                                            <input required="required" placeholder="50" type="number" name="studentCount" value="${param.studentCount}"/>
                                             
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><b>Courser Unit(Credits):</b></td>
                                         <td>
-                                            <input required="required" type="number" name="courserUnits" value="${param.courserUnits}"/>
+                                            <input required="required" type="number" placeholder="15" name="courserUnits" value="${param.courserUnits}"/>
                                             
                                         </td>
                                     </tr>

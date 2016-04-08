@@ -80,7 +80,7 @@
                                 <a href="LoadHome"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
                             <li><a href="ListProgram">Programing</a></li>
-                            <li><a href="ListAllAppCMR">News</a></li>
+                            <li><a href="LoadHome">News</a></li>
                             <li><a href="aboutUs.jsp">About Us</a></li>
                             <li><a href="ListReport">Report</a></li>
                             <li><a href="feedBack.jsp">Feed Back</a></li>

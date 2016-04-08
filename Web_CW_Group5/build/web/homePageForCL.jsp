@@ -85,7 +85,7 @@
                             <li><a href="ListCourseWorkForCL">List CourseWork</a></li>
                             <li><a href="getCMRCLServlet">View Course Monitoring Reports</a></li>
                             <li><a href="profileCL.html">Profile</a></li>
-                            <li><a href="logOut.html">Log out</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">WELCOME</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2; padding-top: 10px; text-align:center">Welcome Course Leader</h3>
                         </div>
                     
                     </div><!--end .container-->

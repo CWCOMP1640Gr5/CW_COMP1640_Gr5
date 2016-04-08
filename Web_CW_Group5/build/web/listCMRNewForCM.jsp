@@ -101,7 +101,7 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Welcome to Course Monitor</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2;padding-top: 10px; text-align:center">Welcome to Course Monitor</h3>
                         </div>
                         <h1 style="color: red">${requestScope.deleteStatus}</h1>
                     <h3 style="color: red">${requestScope.updateStatus}</h3>

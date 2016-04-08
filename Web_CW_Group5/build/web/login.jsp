@@ -80,7 +80,7 @@
                     <div class="row" style="text-align:center">
                         <ul class="nav nav-pills">
                             <li class="active">
-                                <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                                <a href="LoadHome"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
                             <li><a href="ListPrograming">Programing</a></li>
                             <li><a href="LoadHome">News</a></li>
@@ -99,7 +99,7 @@
             <div class="container">                
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="box-title" style="background-color:#2aabd2; text-align:center">Login</h3>
+                        <h3 class="box-title" style="background-color:#2aabd2; text-align:center; margin: 0 auto; padding-top: 10px;">Login</h3>
                     </div>
                     <div class="container">
                         <div class="row">

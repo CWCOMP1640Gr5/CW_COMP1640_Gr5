@@ -82,7 +82,7 @@
                     <div class="row" style="text-align:center">
                         <ul class="nav nav-pills">
                             <li class="active">
-                                <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                                <a href="LoadHome"><i class="glyphicon glyphicon-home"></i> Home</a>
                             </li>
                             <li><a href="ListPrograming">Programing</a></li>
                             <li><a href="LoadHome">News</a></li>

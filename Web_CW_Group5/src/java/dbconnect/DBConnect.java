@@ -22,7 +22,7 @@ public class DBConnect {
         try
         {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con =DriverManager.getConnection("jdbc:sqlserver://comp1640.database.windows.net:1433;database=CourseMonitor", "comp1640@comp1640", "12345Abcd");
+            con =DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=CourseMonitor", "sa", "1234567");
             
         } catch (SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);

@@ -102,7 +102,7 @@
                 <div class="new-lists">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="box-title" style="background-color:#2aabd2; text-align:center">LIST COURSE WORK</h3>
+                            <h3 class="box-title" style="background-color:#2aabd2;padding-top: 10px; text-align:center">LIST COURSE WORK</h3>
                         </div>
 
                         <div class="panel panel-default">
