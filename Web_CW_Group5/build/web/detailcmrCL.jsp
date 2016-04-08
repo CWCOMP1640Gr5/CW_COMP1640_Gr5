@@ -40,24 +40,30 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="pull-left">
-                                <div class="input-group pull-right">              
-                                    <input type="text" class="form-control" placeholder="Search course here">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                                    </span>
-                                </div>
 
-                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+                            
                             <div class="input-group pull-left">                                    
-                                <img style="height:38%;width: 38% " src="templates/img/logo.jpg" alt=""/>
+                                <img style="height:50%;width: 38% " src="templates/img/logo.jpg" alt=""/>
                             </div>
                             <div class="pull-right">
 
                                 <ul class="list-unstyled top-links">
 
                                     <c:if test="${not empty sessionScope.user}">
-                                        <li><h4 style="color: red"> Hello, ${sessionScope.user}</h4></li>
+                                        <li><h4 style="color:#ffffff"> Hello, ${sessionScope.user}</h4></li>
                                         <li><h4><a href="${sessionScope.linkpages}">Control Pages</a></h4></li>
                                         <li><h4><a href="introduction.jsp">Introduction</a></h4></li>
                                         <li><h4><a href="LogoutProcess">Sign out</a></h4></li>

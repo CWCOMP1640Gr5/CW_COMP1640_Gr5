@@ -3,17 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listReport.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listPrograming.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCourse.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/feedBack.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailPrograming.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/introduction.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/login.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/src/java/servlet/DetailPrograming.java</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/commentAppCMRForDirector.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/homePageForCM.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listAllCMRForCM.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/createCMR.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailcmrCL.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCMRNewForCM.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCMRComment.jsp</file>
             <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/home.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/aboutUs.jsp</file>
-            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/src/java/bean/CourseWorkDAO.java</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listApprovedCMR.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/viewAppCMRForDirector.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/listCourserWorkCL.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/homePageForCL.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/detailCMRForCM.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/profileCM.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/homePageForDirection.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/viewCMRCL.jsp</file>
+            <file>file:/C:/Users/Fpt/Documents/SEM6/CW_COMP1640_Gr5/Web_CW_Group5/web/viewCMRForCM.jsp</file>
         </group>
     </open-files>
 </project-private>
