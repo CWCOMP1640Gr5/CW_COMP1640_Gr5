@@ -106,7 +106,7 @@
                                         <td><b>Courser Code:</b></td>
                                         <td>
                                             <input required="required" type="text" name="courseId" value="${param.courseId}"/>
-                                            
+                                            <span style="color: red">${requestScope.courseIdErr}</span>
                                         </td>
                                     </tr>                                  
                                     <tr>

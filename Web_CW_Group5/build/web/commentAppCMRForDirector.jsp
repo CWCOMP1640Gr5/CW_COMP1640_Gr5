@@ -339,7 +339,7 @@
                                         <td>Comment:</td>
                                         <td >
                                             <input type="text" name="txtCMRId" value="${requestScope.CMR.CMRId}" hidden="true"/>
-                                            <textarea name="txtComment" style="width: 100%">${requestScope.CMR.commentContent}</textarea>
+                                            <textarea name="txtComment" required="required" style="width: 100%">${requestScope.CMR.commentContent}</textarea>
                                         </td> 
                                     </tr>
 

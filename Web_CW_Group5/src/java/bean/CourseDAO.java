@@ -161,4 +161,28 @@ public class CourseDAO {
         }
         return courseId;
     }
+     
+     public  boolean checkCourse(String courseId)
+    {
+        Connection con;
+        PreparedStatement pstm=null;
+        
+        con= dbconnect.DBConnect.getConnection();
+        try
+        {
+            pstm= con.prepareStatement("select * from Course where courseId=?");
+            pstm.setString(1, courseId);
+            ResultSet result = pstm.executeQuery();
+            
+            if(result.next())
+            {
+                return true;
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+        
+    }
 }

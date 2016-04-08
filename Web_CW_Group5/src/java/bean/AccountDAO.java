@@ -362,9 +362,9 @@ public class AccountDAO implements Serializable{
         {
             pstm= con.prepareStatement("select * from Account where userName=?");
             pstm.setString(1, userName);
-            int result = pstm.executeUpdate();
+            ResultSet result = pstm.executeQuery();
             
-            if(result >0)
+            if(result.next())
             {
                 return true;
             }

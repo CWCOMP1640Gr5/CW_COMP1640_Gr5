@@ -53,7 +53,7 @@ public class AddNewAccount extends HttpServlet {
         int staff = Integer.parseInt(request.getParameter("slstaff"));
         int phone = Integer.parseInt(request.getParameter("txtPhone"));
         email = request.getParameter("txtEmail");
-        userName = address = request.getParameter("txtuserName");
+        userName = request.getParameter("txtuserName");
         password = request.getParameter("txtPass");
         permission = request.getParameter("permission");
         

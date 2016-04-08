@@ -50,46 +50,55 @@ public class AddNewCourse extends HttpServlet {
         courseId = request.getParameter("courseId");
         description = request.getParameter("txtdescription");
         title = request.getParameter("txtTitle");
+        
+        boolean kq = new CourseDAO().checkCourse(courseId);
 
         //
-        Connection con;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+        if(!kq)
+        {
+            Connection con;
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
 
-        con = dbconnect.DBConnect.getConnection();
-        try {
-            pstmt = con.prepareStatement("INSERT INTO Course VALUES (?,?,?)");
+            con = dbconnect.DBConnect.getConnection();
+            try {
+                pstmt = con.prepareStatement("INSERT INTO Course VALUES (?,?,?)");
 
-            pstmt.setString(1, courseId);
-            pstmt.setString(2, title);
-            pstmt.setString(3, description);
+                pstmt.setString(1, courseId);
+                pstmt.setString(2, title);
+                pstmt.setString(3, description);
 
-            int i = pstmt.executeUpdate();
-            if (i > 0) {
-                //thanh cong
-                request.setAttribute("insertStatus", "Insert successfull for Course:" + courseId);
+                int i = pstmt.executeUpdate();
+                if (i > 0) {
+                    //thanh cong
+                    request.setAttribute("insertStatus", "Insert successfull for Course:" + courseId);
 
-                //lay lai du lieu cho collection
-                List<CourseDAO> listCou = new CourseDAO().getAllCourses();
+                    //lay lai du lieu cho collection
+                    List<CourseDAO> listCou = new CourseDAO().getAllCourses();
 
-                request.setAttribute("listCou", listCou);
-                request.getRequestDispatcher("listCourseAdmin.jsp").forward(request, response);
+                    request.setAttribute("listCou", listCou);
+                    request.getRequestDispatcher("listCourseAdmin.jsp").forward(request, response);
 
-            } else {
-                //ko thanhcong
-                request.setAttribute("insertStatus", "Insert failed");
+                } else {
+                    //ko thanhcong
+                    request.setAttribute("insertStatus", "Insert failed");
 
-                request.getRequestDispatcher("listCourseAdmin.jsp").forward(request, response);
+                    request.getRequestDispatcher("listCourseAdmin.jsp").forward(request, response);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                dbconnect.DBConnect.closeAll(con, pstmt, rs);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            dbconnect.DBConnect.closeAll(con, pstmt, rs);
-        }
 
     }
+        else
+        {
+            request.setAttribute("courseIdErr", "Course Id has been exist!");
+            request.getRequestDispatcher("addNewCourse.jsp").forward(request, response);
+        }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+   }// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
